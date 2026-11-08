@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT/"code"/"frozen_src"))
 sys.path.insert(0, str(ROOT/"code"))
 from src.benchmarks.rmt_fms_generator import generate_rmt_fms
 from src.verifier import verify
-from src.repair.algorithm import repair, lexicographic_objective, model_hash as _unused  # noqa
+from src.repair.algorithm import repair, lexicographic_objective
 from src.repair.exhaustive import exhaustive_repair
 from src.repair.global_constraint_repair import global_constraint_repair
 from src.repair.task_constraint import AlwaysTrueTaskConstraint

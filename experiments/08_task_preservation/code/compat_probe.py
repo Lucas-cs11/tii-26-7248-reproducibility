@@ -28,6 +28,10 @@ def main(n=3):
                              capture_output=True,text=True,timeout=2400)
             out=json.loads(p.stdout.strip().splitlines()[-1]) if p.stdout.strip() else {}
             r=out.get("reconstruction",{})
+            if not out:
+                details.append({"evaluation_id":rec["evaluation_id"],"match":False,
+                                "runner_status":"NO_OUTPUT","stderr_tail":p.stderr[-500:]})
+                continue
             match=bool(r.get("candidate") and r.get("hash_match") and r.get("modified_match") and r.get("CI_match"))
             ok+=match; details.append({"evaluation_id":rec["evaluation_id"],"match":match,
                 "fresh_status":r.get("fresh_verdict"),"hash_match":r.get("hash_match"),
