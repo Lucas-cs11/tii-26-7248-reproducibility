@@ -1,5 +1,7 @@
 # TII-26-7248 — Reproducibility package
 
+[![validate](https://github.com/Lucas-cs11/tii-26-7248-reproducibility/actions/workflows/validate.yml/badge.svg)](https://github.com/Lucas-cs11/tii-26-7248-reproducibility/actions/workflows/validate.yml)
+
 **Paper:** *Bounded Task-Completion Diagnosability of Time Petri Nets:
 Verification and Firing-Interval Adjustment* (IEEE Transactions on Industrial
 Informatics, manuscript TII-26-7248).
