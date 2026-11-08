@@ -20,7 +20,7 @@ no cloud resources.
 ## Evidence authority
 
 * The independent audit (`experiments/01_scalability/results/audit.json`,
-  GitHub Actions run `42434059038`) recomputes every hash and frozen field from
+  GitHub Actions run `42434059038`) recomputes every hash and pre-registered field from
   the raw records; it is the authoritative integrity check.
 * `results/statistics.json` is produced by the analysis pipeline from the raw
   records and is cross-checked against the audit.

@@ -38,7 +38,7 @@ The bulk raw data are not stored in git:
    byte-level hash.
 2. The independent audit re-reads the raw records, the pre-registered task grid, the
    ledgers, the metrics and the hash manifests; it recomputes every hash and
-   checks every frozen field.
+   checks every pre-registered field.
 3. The analysis pipeline recomputes the statistics and cross-checks them against
    the audit; it refuses to emit statistics if the integrity check fails.
 4. Figure 6 is rendered from the statistics only.

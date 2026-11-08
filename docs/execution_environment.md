@@ -38,7 +38,7 @@ Timings are never compared across platforms.
   (`code/requirements.lock` with hashes, `code/requirements-modal.lock`).
 * Every evaluation record carries the source commit, the image specification
   SHA-256, the worker invocation identifier and the evaluation identifier.
-* The independent audit recomputes every file hash and every frozen field from
+* The independent audit recomputes every file hash and every pre-registered field from
   the raw records; it does not reuse the runner's bookkeeping.
 
 ## Environment of the archived experiments
