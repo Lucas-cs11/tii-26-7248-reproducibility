@@ -50,7 +50,7 @@ from pathlib import Path
 
 USER_AGENT = (
     "tii-published-tpn-case-eval/1.0 "
-    "(+https://github.com/Lucas-cs11/tii-published-tpn-case-eval; GitHub Actions)"
+    "(+https://github.com/Lucas-cs11/tii-26-7248-reproducibility; GitHub Actions)"
 )
 
 # curl --write-out template: one KEY=VALUE per line, parsed below.
