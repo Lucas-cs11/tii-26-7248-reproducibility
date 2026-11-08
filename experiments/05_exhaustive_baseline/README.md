@@ -20,8 +20,8 @@ Status vocabulary: `VERIFIED_SUCCESS`, `FINITE_SEARCH_FAILURE`, `INC`,
 * `population/full_amb_population.csv.gz` — fixed 16,038-evaluation AMB
   population.
 * `tools/` — sharding, benchmark calibration and run tools.
-* `shards/calib.json` — 40-case calibration sample.
-* The 40 full-run partitions remain in the archived companion repository.
+* `shards/calib.json` — calibration sample.
+* The complete partition results remain in the archived companion repository.
 
 ## Cost
 
