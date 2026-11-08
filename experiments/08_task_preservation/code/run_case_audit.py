@@ -84,14 +84,15 @@ def main():
         certs_final = vf.get("certificates") or []
         try:
             obj = lexicographic_objective(candidate, certs_final, tpn, "O0")
-            ci = frac(obj[2]) if len(obj) > 2 else NA
+            ci = str(float(obj[2])) if len(obj) > 2 else NA
         except Exception:
             ci = NA
         out["reconstruction"] = {"candidate": True, "final_model_hash": h, "modified_transition_count": mc,
             "fresh_verdict": vf.get("result"), "fresh_certs": len(certs_final), "CI": ci,
             "hash_match": h == expected.get("final_model_hash"),
             "modified_match": str(mc) == str(expected.get("modified_transition_count")),
-            "CI_match": str(ci)[:10] == str(expected.get("CI"))[:10]}
+            "CI_match": (ci != NA and expected.get("CI") not in (None, "NA")
+                         and abs(float(ci) - float(expected.get("CI"))) < 1e-6)}
         success = vf.get("result") == "VER" and not certs_final
         out["fresh_success"] = success
         if success and ref:
