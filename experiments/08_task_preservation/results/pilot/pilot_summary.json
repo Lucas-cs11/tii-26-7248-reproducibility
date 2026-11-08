@@ -1,0 +1,89 @@
+{
+  "run_id": "42475575928",
+  "workflow": "r3_2_phaseA_pilot",
+  "commit": "a0d1553",
+  "coverage": {
+    "shards_downloaded": 70,
+    "of_total": 80,
+    "records": 5106,
+    "evaluations_covered": 1702,
+    "of_pilot": 1942,
+    "coverage_rate": 0.8764
+  },
+  "reconstruction_fidelity": {
+    "success_exact_match": 2683,
+    "other_consistent": 2021,
+    "other_compute_limit": 289,
+    "success_compute_limit": 2
+  },
+  "expected_status_distribution": {
+    "VERIFIED_SUCCESS": 2685,
+    "NO_IMPROVING_CANDIDATE": 713,
+    "FINITE_SEARCH_FAILURE": 1181,
+    "TIMEOUT": 527
+  },
+  "flips": {
+    "TIMEOUT->success": 103,
+    "NO_IMPROVING_CANDIDATE->success": 5,
+    "FINITE_SEARCH_FAILURE->success": 3
+  },
+  "fresh_successes": 2794,
+  "predicate_by_method": {
+    "cpgld": {
+      "n": 1627,
+      "path_pass": 1428,
+      "path_rate": 0.8777,
+      "psi0": 949,
+      "psi0_rate": 0.5833,
+      "psi5": 1206,
+      "psi10": 1428,
+      "lost_normal": 11,
+      "lost_fault": 199,
+      "undetermined": 0
+    },
+    "coquand": {
+      "n": 946,
+      "path_pass": 896,
+      "path_rate": 0.9471,
+      "psi0": 896,
+      "psi0_rate": 0.9471,
+      "psi5": 896,
+      "psi10": 896,
+      "lost_normal": 0,
+      "lost_fault": 50,
+      "undetermined": 0
+    },
+    "exhaustive": {
+      "n": 221,
+      "path_pass": 188,
+      "path_rate": 0.8507,
+      "psi0": 188,
+      "psi0_rate": 0.8507,
+      "psi5": 188,
+      "psi10": 188,
+      "lost_normal": 1,
+      "lost_fault": 33,
+      "undetermined": 0
+    }
+  },
+  "predicate_all": {
+    "n": 2794,
+    "path_pass": 2512,
+    "psi0": 2033,
+    "psi5": 2290,
+    "psi10": 2512,
+    "lost_normal": 12,
+    "lost_fault": 282,
+    "undetermined": 0
+  },
+  "compute_limit_by_method": {
+    "cpgld": 75,
+    "coquand": 32,
+    "exhaustive": 184
+  },
+  "no_candidate_by_method": {
+    "coquand": 724,
+    "exhaustive": 1297
+  },
+  "shard_wall_hours": 122.7
+}
