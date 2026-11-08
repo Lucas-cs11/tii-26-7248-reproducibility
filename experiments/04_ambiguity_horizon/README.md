@@ -8,11 +8,11 @@ AMB, with an epsilon re-check on both sides of the threshold.
 
 | metric | value |
 |---|---:|
-| models covered by the run artifacts | 4,068 |
-| (model, H-ratio) evaluations | 20,340 |
-| completed / wall-clock-capped | 18,194 / 2,146 |
-| completed verdicts | AMB 18,194 |
-| threshold `H_amb*/H_base` | P05 0.141, P25 0.197, median 0.231, P75 0.282, P95 0.333; range 0.141–0.394 |
+| models with result rows (population: 16,038) | 15,288 |
+| (model, H-ratio) evaluations | 76,440 |
+| completed / wall-clock-capped | 74,294 / 2,146 |
+| completed verdicts | AMB 74,294 |
+| threshold `H_amb*/H_base` | P05 0.167, P25 0.231, median 0.278, P75 0.313, P95 0.394; range 0.141–0.394 |
 
 The fixed population contains 16,038 AMB models; the recovered run artifacts
 cover the 4,068 models above.

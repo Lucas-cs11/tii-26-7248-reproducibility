@@ -12,7 +12,7 @@ Diagnosability of Time Petri Nets: Verification and Firing-Interval Adjustment*
 | Scalability of the bounded-diagnosability analysis | Fig. 6 | 8,280 pre-registered evaluations: 5,406 completed, 2,874 wall-clock-capped, 0 errors; verdicts VER 1,975 / AMB 2,782 / INC 649 |
 | Implementation equivalence of the optimized verifier | — | 48 paired evaluations (30 conclusive and identical), 726,665 transition-level comparisons with 0 mismatches, 5 component audits with 0 mismatches |
 | Per-case verifier runtimes | Fig. 3 | 36,450 evaluations, all completed; verdicts VER 20,412 / AMB 16,038; median 8.1 ms, P90 107 ms, P95 0.92 s, maximum 5.59 s |
-| Ambiguity-horizon sensitivity | threshold figure | 4,068 AMB models, 20,340 (model, ratio) evaluations; threshold `H_amb*/H_base`: median 0.231, P05–P95 0.141–0.333 |
+| Ambiguity-horizon sensitivity | threshold figure | 15,288 AMB models (of the 16,038-model population), 76,440 (model, ratio) evaluations, 74,294 completed; threshold `H_amb*/H_base`: median 0.278, P05–P95 0.167–0.394 |
 | One-step exhaustive firing-interval adjustment | adjustment table | full 16,038-evaluation AMB population: 2,001 verified successes, 11,314 finite-search failures, 2,683 wall-clock-capped, 40 errors |
 | Historical-baseline audit | — | 3,645 archived evaluations recomputed with **0 verdict changes**; full second pass 1,956/1,956 |
 | Case studies | case figures/tables | illustrative net; published nets (Wang/Mahulea/Silva, *IEEE TAC* 2015: 38 state classes / 63 edges, identical to TINA 4.0.0 `-W`); manufacturing subnet; public context dataset (outcome: not sufficient for a task-completion case) |
