@@ -54,7 +54,9 @@ experiments/
   field from the raw records; its result is
   `experiments/01_scalability/results/audit.json` (PASS, 8,280 evaluations,
   8,280 unique identifiers, 120 partitions).
-* The bulk raw scalability records (8,280 JSON records plus partition ledgers,
-  metrics and hash manifests) are attached to this repository as the release
-  asset `scalability-evaluations`.
+* Bulk input/output data are attached to this repository as release assets:
+  `scalability-evaluations` (8,280 raw evaluation records with partition
+  ledgers, metrics and hash manifests), `ambiguity-cohorts` (cohort definitions
+  for the ambiguity-horizon study) and `timing-evaluation-list` (the frozen
+  36,450-evaluation list for the timing measurement).
 * `MANIFEST.sha256` at the root covers every checked-in file.
