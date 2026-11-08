@@ -10,7 +10,6 @@ Read-only feasibility study of a public industrial context dataset:
   verifies the MD5 before extraction;
 * **outcome:** the archive does not support a data-grounded task-completion
   Time Petri Net case (no product identity, no observable alphabet, no
-  adjustment authority); the evidence and the retained auxiliary results are
-  documented in `analysis_summary.md`;
+  adjustment authority); evidence in `analysis_summary.md`;
 * `results/` — summary tables and inventories used in the study;
 * `scripts/` — download, extraction and analysis scripts.

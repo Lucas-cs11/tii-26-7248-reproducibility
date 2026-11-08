@@ -5,7 +5,7 @@ Independent literature-grounded evaluation line for **TII-26-7248**
 Firing-Interval Adjustment*. It is an independent evaluation of published models; the fixed 17P/15T model is imported read-only
 and never modified.
 
-## Headline results (authoritative GHA run 42334373373)
+## Headline results (authoritative 42334373373)
 
 * **Wang/Mahulea/Silva TAC 2015** (`wangTAC.net`, 7P/7T): Table 4.1 state
   classes and Example 4.1 firing domain `[4,7]` reproduced exactly; the
@@ -58,7 +58,7 @@ python tools/verify_deliverable.py --zip ../TII_Published_TPN_Case_Comparison.zi
 ```
 
 Authoritative run: `.github/workflows/evaluate.yml` on GitHub Actions; run ids
-in `reports/gha_runs.md` / `reports/GHA_RUNS.json`.
+in `reports/gha_runs.md` / `reports/.json`.
 
 Deliverable: `../TII_Published_TPN_Case_Comparison.zip`; its SHA-256 is recorded
 in `reports/DELIVERABLE_SHA256.txt` (a sidecar build record kept outside the
