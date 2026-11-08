@@ -2,8 +2,7 @@
 
 Independent literature-grounded evaluation line for **TII-26-7248**
 *Bounded Task-Completion Diagnosability of Time Petri Nets: Verification and
-Firing-Interval Adjustment*. It is isolated from the Scalability v6 and
-industrial-TPN SCG repair lines; the fixed 17P/15T model is imported read-only
+Firing-Interval Adjustment*. It is an independent evaluation of published models; the fixed 17P/15T model is imported read-only
 and never modified.
 
 ## Headline results (authoritative GHA run 42334373373)

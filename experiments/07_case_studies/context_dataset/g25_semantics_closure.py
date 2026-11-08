@@ -168,9 +168,9 @@ def main() -> int:
             with (OUT / name).open("w", newline="") as fh:
                 w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
                 w.writeheader(); w.writerows(rows)
-    dump("tu_pair_diff_stats_v2.csv", tu_rows)
+    dump("tu_pair_diff_stats.csv", tu_rows)
     dump("tu_global_stats.csv", tu_global)
-    dump("activity_windows_v2.csv", win_rows)
+    dump("activity_windows.csv", win_rows)
     dump("press_step_sequence.csv", seq_rows)
     (OUT / "g25_summary.json").write_text(json.dumps(summary, indent=1))
     print(json.dumps({"windows": len(win_rows), "by_censoring": summary["by_censoring"],

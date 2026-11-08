@@ -20,21 +20,21 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
-          cache-dependency-path: experiments/01_scalability_v6/code/requirements-v5.lock
+          cache-dependency-path: experiments/01_scalability/code/requirements.lock
       - name: Install pinned dependencies
-        run: python -m pip install --require-hashes -r experiments/01_scalability_v6/code/requirements-v5.lock
-      - name: Unit tests (67)
+        run: python -m pip install --require-hashes -r experiments/01_scalability/code/requirements.lock
+      - name: Unit tests (55)
         run: |
-          cd experiments/01_scalability_v6/code
+          cd experiments/01_scalability/code
           python -m unittest discover -s tests -p 'test_*.py' -v
-      - name: Validate the frozen 8,280-cell protocol
+      - name: Validate the pre-registered 8,280-evaluation protocol
         run: |
-          tar -xzf experiments/01_scalability_v6/protocol/v6_formal_tasks.tar.gz \
-            -C experiments/01_scalability_v6/protocol
-          python experiments/01_scalability_v6/code/scripts/validate_v6_formal_protocol.py \
-            --manifest experiments/01_scalability_v6/protocol/v6_formal_manifest.json \
-            --tasks experiments/01_scalability_v6/protocol/v6_formal_tasks \
-            --semantics-gate experiments/01_scalability_v6/protocol/v6_semantics_gate.json \
-            --out /tmp/v6_validation.json
+          tar -xzf experiments/01_scalability/protocol/formal_tasks.tar.gz \
+            -C experiments/01_scalability/protocol
+          python experiments/01_scalability/code/scripts/validate_formal_grid.py \
+            --manifest experiments/01_scalability/protocol/formal_task_manifest.json \
+            --tasks experiments/01_scalability/protocol/formal_tasks \
+            --semantics-reference experiments/01_scalability/protocol/semantics_reference.json \
+            --out /tmp/validation.json
       - name: Verify the checked-in MANIFEST.sha256
         run: sha256sum -c MANIFEST.sha256

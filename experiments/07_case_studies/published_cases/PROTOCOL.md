@@ -1,7 +1,7 @@
 # PROTOCOL — Literature-Grounded TPN Case Evaluation
 
 Independent experiment line for TII-26-7248. This repository is **read-only with respect to
-the Scalability v6 and industrial-TPN SCG repair repositories**: it imports files, never edits
+the other experiment folders**: it imports files, never edits
 them, and keeps its own model, code and results.
 
 ## 0. Non-negotiable rules
