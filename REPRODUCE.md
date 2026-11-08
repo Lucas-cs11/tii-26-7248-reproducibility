@@ -117,7 +117,7 @@ median 8.1 ms, P95 0.92 s, maximum 5.59 s; verdicts VER 20,412 / AMB 16,038).
 python experiments/03_verifier_timing/driver/run_shard.py --shard 000 --out results/
 ```
 
-The frozen evaluation list (255 partitions) remains in the archived companion
+The pre-registered evaluation list (255 partitions) remains in the archived companion
 repository `tii-26-7248-verifier-timing`; the verifier implementation is
 `experiments/01_scalability/code/src/`.
 

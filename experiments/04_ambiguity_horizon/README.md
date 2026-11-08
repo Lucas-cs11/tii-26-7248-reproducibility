@@ -1,6 +1,6 @@
 # Experiment 04 — ambiguity-horizon sensitivity
 
-For each AMB model of the frozen baseline population the experiment computes
+For each AMB model of the pre-registered baseline population the experiment computes
 the ambiguity threshold `H_amb*/H_base`: the smallest H-normalized horizon at
 which the verdict becomes AMB, with an epsilon re-check on both sides.
 

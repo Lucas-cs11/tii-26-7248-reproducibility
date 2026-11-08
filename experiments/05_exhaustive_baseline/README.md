@@ -1,7 +1,7 @@
 # Experiment 05 — one-step exhaustive adjustment baseline
 
 Runs the one-step exhaustive firing-interval adjustment baseline over the full
-16,038-evaluation AMB population of the frozen benchmark.
+16,038-evaluation AMB population of the pre-registered benchmark.
 
 ## Result (complete population)
 

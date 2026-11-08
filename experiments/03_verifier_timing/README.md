@@ -36,5 +36,5 @@ python driver/run_shard.py --shard 000 --out results/
 ```
 
 The verifier implementation is the one shipped in
-`../01_scalability/code/src/`; the frozen evaluation list is in the archived
+`../01_scalability/code/src/`; the pre-registered evaluation list is in the archived
 companion repository `tii-26-7248-verifier-timing`.
