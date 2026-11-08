@@ -1,0 +1,41 @@
+protocol_version: 3
+status: repair_sensitivity_r3_5_B_objective
+
+# R3-5B — Lexicographic-objective sensitivity (EXPLORATORY, not paper-final).
+# Fixed: candidate density base, domain wide, task constraint, verifier,
+# cases, seeds, budgets.  Varied: objective_variant {O0, O1, O2, O3}
+# (pure lexicographic projections; candidate generation / task gate /
+# verifier semantics unchanged).
+
+backend: greedy
+
+output_dir: results/repair_sensitivity_r3_5
+
+restrict_model_ids_from: configs/r3_5_cohort.txt
+
+task_constraint: exact_critical_sequence_preservation
+domain_policy: wide
+candidate_density: base
+
+objective_variants:
+  - O0
+  - O1
+  - O2
+  - O3
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 50

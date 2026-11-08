@@ -1,0 +1,51 @@
+protocol_version: 3
+status: fullscale_stratified
+
+# 从协议定义的参数空间中取前3档，15个随机种子
+# 完整协议参数定义见 pilot_protocol_v2.yaml
+# 本实验取每个参数列表的前 param_slice 个值，前 n_seeds 个种子
+
+param_slice: 3       # 每个参数取前N个值
+n_seeds: 15          # 种子数
+
+repetition:
+  deterministic_warmup: 0
+  deterministic_repeats: 3
+  simulation_seeds: 15
+
+limits:
+  timeout_seconds: 60
+  memory_gb: 32
+
+solvers:
+  primary_lp: scipy_highs
+  feasibility_tolerance: 1.0e-09
+  optimality_tolerance: 1.0e-09
+
+benchmark_families:
+  rmt_fms:
+    enabled: true
+    # 完整参数列表（从中取前 param_slice 个）
+    machine_counts:         [2, 3, 4, 5, 6, 8, 10]
+    part_type_counts:       [1, 2, 3, 4, 6]
+    operations_per_part:    [2, 4, 6, 8]
+    wip_bounds:             [1, 2, 3, 4]
+    unobservable_ratios:    [0.1, 0.3, 0.5, 0.7]
+    fault_locations:        [1, 2, 4, 8]
+    interval_width_factors: [0.5, 1.0, 1.5, 2.0]
+    adjustable_ratios:      [0.1, 0.25, 0.5, 0.75]
+  boundary:
+    enabled: false
+
+# Methods to run on every instance
+methods:
+  - main
+  - no_sync
+  - no_envelope
+  - mscg_lp_adapted
+
+# n_parts * ops_per_part * wip_bound <= this value
+concurrency_cap: 8
+
+# 增量保存间隔（每完成N个任务写一次文件）
+checkpoint_interval: 500

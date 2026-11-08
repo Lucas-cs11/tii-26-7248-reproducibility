@@ -1,0 +1,43 @@
+protocol_version: 3
+status: repair_experiment_task_preservation
+
+# R3-2a task-preservation protocol (EXPLORATORY — not the paper's final numbers).
+#
+# 与修复实验 repair_protocol_lp_greedy 相同的均衡采样实例集，但启用
+# exact_critical_sequence_preservation 任务约束：
+#   修复得到的模型必须保持从 N0 完整 AMB 证书枚举中冻结的每条关键序列
+#   在 horizon H 下的 timed feasibility（精确关键序列保持，v1）。
+#
+# 统计语义（必须与论文中的原 repair 数据区分）：
+#   - 本协议下部分原 SUCCESS 实例因关键序列不再保持而变为 FAILURE
+#     (failure_reason=TASK_PRESERVATION_VIOLATION) —— 这是约束生效，
+#     不是退化。
+#   - 本协议产生的 success rate 仅用于 R3-2 探索性分析，不作为论文最终
+#     实验数据。
+#
+# R3-2c 将把 restrict 换成 30–60 例 pilot 列表后正式运行。
+
+backend: greedy
+
+output_dir: results/repair_taskpres
+
+restrict_model_ids_from: configs/balanced_600_model_ids.txt
+
+task_constraint: exact_critical_sequence_preservation
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

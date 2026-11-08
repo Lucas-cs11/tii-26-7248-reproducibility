@@ -1,0 +1,51 @@
+protocol_version: 3
+status: repair_experiment_domain_ablation_r3c2
+
+# R3-2c held-out diagnostic run (EXPLORATORY — not the paper's final numbers).
+#
+# Held-out stratified 40-instance set (disjoint from the R3-2b 40-instance
+# pilot).  Five domain policies:
+#   wide / moderate / narrow   (R3-2b ladder, FROZEN — no tuning)
+#   wide-no-fast               (ablation: compressed recovery [0,1] removed)
+#   wide-no-delayed            (ablation: delayed recovery [3,5] removed)
+#
+# Purpose:
+#   * validate on held-out data that the wide->moderate success cliff is a
+#     real mechanism (a finding to explain), not a sampling artifact or a
+#     policy-design defect;
+#   * attribute the cliff to the fast vs delayed recovery options via the
+#     two single-mechanism ablations.
+#
+# All runs use the R3-2a exact-critical-sequence-preservation constraint.
+
+backend: greedy
+
+output_dir: results/repair_domain_pilot_r3c2
+
+restrict_model_ids_from: configs/r3_2c_diagnostic_model_ids.txt
+
+task_constraint: exact_critical_sequence_preservation
+
+domain_policies:
+  - wide
+  - moderate
+  - narrow
+  - wide-no-fast
+  - wide-no-delayed
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 50

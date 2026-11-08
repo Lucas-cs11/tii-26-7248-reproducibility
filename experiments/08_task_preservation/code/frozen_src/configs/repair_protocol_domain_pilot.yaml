@@ -1,0 +1,48 @@
+protocol_version: 3
+status: repair_experiment_domain_pilot
+
+# R3-2b Tadj-controllability pilot (EXPLORATORY — not the paper's final numbers).
+#
+# Same 40-instance stratified AMB pilot, three t_recov admissible-domain tiers
+# (wide / moderate / narrow), all under the R3-2a exact-critical-sequence
+# preservation constraint.  Only the t_recov domain varies; the t_proc domain
+# (±50% nominal) is held fixed, isolating the recovery-time adjustment
+# authority.
+#
+# Semantic contract (must be respected in any write-up):
+#   * 'wide' reproduces the submitted 'extended' domain bit-identically.
+#   * 'moderate' / 'narrow' are synthetic exploratory sensitivity levels, NOT
+#     physical/industrial constraints.
+#   * Success rates here are controllability evidence (success rate and
+#     modification magnitude tune with the allowed domain), not the paper's
+#     final experiment data.
+
+backend: greedy
+
+output_dir: results/repair_domain_pilot
+
+restrict_model_ids_from: configs/domain_pilot_model_ids.txt
+
+task_constraint: exact_critical_sequence_preservation
+
+domain_policies:
+  - wide
+  - moderate
+  - narrow
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 50

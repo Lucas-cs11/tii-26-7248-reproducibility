@@ -1,0 +1,33 @@
+protocol_version: 3
+status: repair_experiment_balanced_greedy
+
+# 均衡采样修复实验（greedy 后端）
+# 612 个 AMB 实例，分层采样覆盖 (n_machines, n_parts, ops_per_part) 全空间
+# 目的：验证 greedy 在不同复杂度场景下的修复性能
+#
+# 与原 repair_protocol.yaml 的区别：
+#   - 实例集从 300（仅 m=2, 81% j=1）扩展到 612（m=2~10, j=1~3 均衡）
+#   - 使用更新后的代码（带 backend/solve_status 等新字段）
+#   - 结果写入 results/repair_balanced_greedy/
+
+backend: greedy
+
+# 限制到均衡采样的 612 实例
+restrict_model_ids_from: configs/balanced_600_model_ids.txt
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

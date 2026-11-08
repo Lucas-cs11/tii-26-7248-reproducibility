@@ -1,0 +1,30 @@
+protocol_version: 3
+status: repair_experiment_boundary
+
+# 边界样本修复实验（54实例）
+# 覆盖全量实验中被 concurrency_cap=8 过滤掉的 3 个高复杂度组合：
+#   np=2,ops=6 (总操作=12), np=3,ops=4 (总操作=12), np=3,ops=6 (总操作=18)
+#
+# 目的：摸底 LP 增强贪心修复在最复杂 RMT-FMS 实例上的性能边界
+#
+# 使用 LP 增强贪心后端（同 repair_protocol_lp_greedy.yaml）
+
+backend: greedy_lp_boundary
+
+restrict_model_ids_from: configs/boundary_model_ids.txt
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 600
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/boundary/boundary_amb_instances.json
+
+checkpoint_interval: 18

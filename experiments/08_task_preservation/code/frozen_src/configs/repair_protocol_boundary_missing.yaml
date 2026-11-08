@@ -1,0 +1,31 @@
+protocol_version: 3
+status: repair_experiment_boundary_supplement
+
+# 补跑边界实验中 9 个被去重逻辑跳过的 seed=1 实例
+#
+# 根因：load_amb_instances 按 (n_machines, n_parts, ops_per_part, wip_bound,
+#   unobservable_ratio, fault_locations, interval_width_factor, adjustable_ratio)
+# 去重，seed=0 优先，导致 9 个 seed=1 实例被过滤。
+#
+# 解决：使用仅含 9 个 seed=1 实例的独立输入文件，绕过去重；
+#       用 --resume 追加到现有 36 条结果中，形成完整的 45 条数据集。
+
+backend: greedy_lp_boundary
+
+restrict_model_ids_from: configs/boundary_model_ids_missing.txt
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 600
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/boundary/boundary_amb_missing.json
+
+checkpoint_interval: 9

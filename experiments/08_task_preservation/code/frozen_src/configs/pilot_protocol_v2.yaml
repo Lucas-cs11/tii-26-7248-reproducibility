@@ -1,0 +1,177 @@
+protocol_version: 2
+status: pilot_only
+manuscript: 'Bounded End-to-End Fault Diagnosability of Time Petri Nets: Observation-Conditioned
+  Verification and Timing Repair'
+semantics:
+  server: single
+  time: strong
+  completion: first_entry
+  observation:
+  - label_word
+  - total_completion_time
+  fault_classes: 1
+hardware:
+  record_automatically: true
+  cpu_affinity: true
+  max_threads: 1
+limits:
+  timeout_seconds: 1800
+  memory_gb: 32
+solvers:
+  primary_lp: scipy_highs
+  secondary_lp: null
+  feasibility_tolerance: 1.0e-09
+  optimality_tolerance: 1.0e-09
+repetition:
+  deterministic_warmup: 3
+  deterministic_repeats: 10
+  simulation_seeds: 30
+  final_simulation_seeds_target: 100
+benchmark_families:
+  micro:
+    enabled: true
+  original_small_example:
+    enabled: true
+  rmt_fms:
+    enabled: true
+    machine_counts:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 10
+    part_type_counts:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 6
+    operations_per_part:
+    - 2
+    - 4
+    - 6
+    - 8
+    wip_bounds:
+    - 1
+    - 2
+    - 3
+    - 4
+    unobservable_ratios:
+    - 0.1
+    - 0.3
+    - 0.5
+    - 0.7
+    fault_locations:
+    - 1
+    - 2
+    - 4
+    - 8
+    interval_width_factors:
+    - 0.5
+    - 1.0
+    - 1.5
+    - 2.0
+    adjustable_ratios:
+    - 0.1
+    - 0.25
+    - 0.5
+    - 0.75
+  boundary:
+    enabled: true
+    positive_cycle_counts:
+    - 0
+    - 1
+    - 2
+    - 4
+    include_zero_time_cycle: true
+bounds:
+  L_factors_of_longest_complete_word:
+  - 0.5
+  - 0.75
+  - 1.0
+  - 1.25
+  H_factors_of_nominal_makespan:
+  - 0.8
+  - 1.0
+  - 1.2
+  - 1.5
+repair:
+  controller_time_grids:
+  - 0.01
+  - 0.05
+  - 0.1
+  - 0.5
+  performance_budgets_percent:
+  - 0
+  - 1
+  - 3
+  - 5
+  - 10
+  enumerate_complete_certificate_set: true
+  independent_final_reverification: true
+baselines:
+  complete_bounded_temporal_expansion: true
+  mscg_lp_adapted:
+    enabled: true
+    source: Basile_et_al_2017_IEEE_TAC
+    same_property: bounded_complete_task_e2e
+    disable:
+    - observation_synchronizer
+    - conditioned_expansion
+    - enclosure_rejection
+    label_as_original_method: false
+  original_basile_k_tau_tests: supplementary_property_level_only
+  full_eterg: conditional_on_validated_reimplementation
+  no_synchronizer: true
+  no_enclosure: true
+  no_merge: true
+  enclosure_only: true
+  local_greedy_repair: true
+  random_repair: true
+  exhaustive_small_repair_oracle: true
+outputs:
+  raw_json: true
+  raw_csv: true
+  certificates: true
+  repair_trace: true
+  stage_timing: true
+  peak_memory: true
+  model_hash: true
+  protocol_hash: true
+freeze_rules:
+  require_all_micro_oracles_pass: true
+  require_no_false_VER: true
+  require_pilot_nontrivial_runtime_range: true
+  prohibit_post_result_parameter_changes: true
+benchmark_claim_policy:
+  classification: industrially_inspired_synthetic_benchmark
+  source_structure: Huang et al., IEEE TII, 2024
+  independently_specified:
+  - tpn_mapping
+  - timing_intervals
+  - observable_labels
+  - fault_transitions
+  - repair_domains
+  - task_instances
+  - random_seeds
+  prohibited_claims:
+  - industrial_validation
+  - validated_industrial_applicability
+  - deployment_ready
+parameter_provenance:
+  allowed_types:
+  - cited_bound
+  - simulator_calibrated
+  - synthetic_sensitivity
+  require_for_every_timed_transition: true
+  prohibit_cost_to_time_without_justification: true
+sensitivity_required:
+- interval_width
+- fault_duration
+- fault_location
+- unobservable_ratio
+- wip_bound
+- concurrency
+- repair_domain_width

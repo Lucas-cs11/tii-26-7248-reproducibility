@@ -1,0 +1,31 @@
+protocol_version: 3
+status: repair_experiment_greedy_fixed
+
+# Greedy 修复后的 300 实例重跑（与 exhaustive 公平对比）
+#
+# 修复内容：将 pair fallback 从"全部可调变迁"限定到"证书作用域"
+# 目的：验证修复后的 greedy 与 exhaustive 在相同 300 实例上的性能对比
+#
+# 结果写入 results/repair_greedy_fixed/
+
+backend: greedy
+
+# 与 exhaustive 使用完全相同的 300 实例
+restrict_model_ids_from: results/repair/repair_results.csv
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

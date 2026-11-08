@@ -1,0 +1,18 @@
+{
+ "methods": {
+  "cpgld": 16038,
+  "coquand": 16038,
+  "exhaustive": 16038
+ },
+ "population": 16038,
+ "common_success": {
+  "cpgld": 14830,
+  "coquand": 9097,
+  "exhaustive": 2005
+ },
+ "common_all_three": 2005,
+ "common_cpgld_coquand": 9024,
+ "legacy_612_ids": 612,
+ "legacy_ids_intersect_population": 324,
+ "legacy_ids_not_in_population": 288
+}

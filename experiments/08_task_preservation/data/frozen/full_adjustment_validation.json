@@ -1,0 +1,111 @@
+{
+ "generated_at": "2026-11-03T11:10:25",
+ "population": {
+  "expected": 16038,
+  "actual": 16038,
+  "unique_ids": 16038,
+  "duplicate_rows": 0
+ },
+ "population_sha256_file": "/Users/lucas/tii_tpn_full_adjustment/population/full_amb_population_sha256.txt",
+ "methods": {
+  "cpgld": {
+   "records": 16038,
+   "expected": 16038,
+   "missing_ids": 0,
+   "unexpected_ids": 0,
+   "duplicate_keys": 0,
+   "status_counts": {
+    "VERIFIED_SUCCESS": 14830,
+    "TIMEOUT": 1202,
+    "FINITE_SEARCH_FAILURE": 6
+   },
+   "invalid_statuses": {},
+   "success_count": 14830,
+   "success_rate_of_population": 0.9246788876418506,
+   "sum_of_statuses": 16038,
+   "closure_equals_population": true,
+   "success_validation_failures": [],
+   "n_success_validation_failures": 0,
+   "L_H_mismatch_vs_population": [],
+   "n_L_H_mismatch": 0,
+   "adjustable_ratio_mismatch": [],
+   "n_adjustable_ratio_mismatch": 0,
+   "missing_sample": [],
+   "unexpected_sample": []
+  },
+  "coquand": {
+   "records": 16038,
+   "expected": 16038,
+   "missing_ids": 0,
+   "unexpected_ids": 0,
+   "duplicate_keys": 0,
+   "status_counts": {
+    "VERIFIED_SUCCESS": 9097,
+    "NO_IMPROVING_CANDIDATE": 6455,
+    "TIMEOUT": 486
+   },
+   "invalid_statuses": {},
+   "success_count": 9097,
+   "success_rate_of_population": 0.5672153635116598,
+   "sum_of_statuses": 16038,
+   "closure_equals_population": true,
+   "success_validation_failures": [],
+   "n_success_validation_failures": 0,
+   "L_H_mismatch_vs_population": [],
+   "n_L_H_mismatch": 0,
+   "adjustable_ratio_mismatch": [],
+   "n_adjustable_ratio_mismatch": 0,
+   "missing_sample": [],
+   "unexpected_sample": []
+  },
+  "exhaustive": {
+   "records": 16038,
+   "expected": 16038,
+   "missing_ids": 0,
+   "unexpected_ids": 0,
+   "duplicate_keys": 0,
+   "status_counts": {
+    "VERIFIED_SUCCESS": 2005,
+    "FINITE_SEARCH_FAILURE": 11342,
+    "TIMEOUT": 2691
+   },
+   "invalid_statuses": {},
+   "success_count": 2005,
+   "success_rate_of_population": 0.12501558797855095,
+   "sum_of_statuses": 16038,
+   "closure_equals_population": true,
+   "success_validation_failures": [],
+   "n_success_validation_failures": 0,
+   "L_H_mismatch_vs_population": [],
+   "n_L_H_mismatch": 0,
+   "adjustable_ratio_mismatch": [],
+   "n_adjustable_ratio_mismatch": 0,
+   "missing_sample": [],
+   "unexpected_sample": []
+  }
+ },
+ "cross_method_initial_model_hash_conflicts": {
+  "n": 0,
+  "sample": {}
+ },
+ "totals": {
+  "method_case_records": 48114,
+  "expected_if_all_three_complete": 48114,
+  "status_union": {
+   "VERIFIED_SUCCESS": 25932,
+   "TIMEOUT": 4379,
+   "FINITE_SEARCH_FAILURE": 11348,
+   "NO_IMPROVING_CANDIDATE": 6455
+  }
+ },
+ "common_success": {
+  "cpgld": 14830,
+  "coquand": 9097,
+  "exhaustive": 2005,
+  "all_three": 2005,
+  "cpgld_and_coquand": 9024,
+  "cpgld_and_exhaustive": 2005
+ },
+ "experiment_complete": true,
+ "PASS": true
+}

@@ -1,0 +1,49 @@
+protocol_version: 3
+status: repair_sensitivity_r3_5
+
+# R3-5 sensitivity study (EXPLORATORY — not the paper's final repair data).
+#
+# R3-5A discretization axis: candidate_density {coarse, base, fine} over the
+# fixed wide semantic envelope (protocol §3.2/§3.3); lp_resolution may be set
+# to decouple the LP search resolution for the D1/D2 mechanism diagnostics
+# (protocol §10.3).
+# R3-5B objective axis: objective_variant {O0, O1, O2, O3} — pure lexicographic
+# projections (protocol §6).
+#
+# This file is a TEMPLATE cell: run it once per (candidate_density,
+# objective_variant) cell.  The full Phase 2B matrix composes the 53-case
+# cohort (configs/r3_5_cohort.txt) × density × objective.  Frozen R3-2 raw
+# artifacts are never written to.
+
+backend: greedy
+
+output_dir: results/repair_sensitivity_r3_5
+
+restrict_model_ids_from: configs/r3_5_cohort.txt
+
+task_constraint: exact_critical_sequence_preservation
+
+# R3-5 keeps the admissible domain fixed to wide (never changes policy).
+domain_policy: wide
+
+# Cell parameters (override per run).
+candidate_density: base
+# lp_resolution: 1/2        # optional D1/D2 override; default aligned with density
+objective_variant: O0
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 50

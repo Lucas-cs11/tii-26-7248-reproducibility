@@ -1,0 +1,35 @@
+protocol_version: 3
+status: repair_experiment_lp_greedy
+
+# LP-增强贪心修复实验
+# 与原始贪心使用相同的 612 均衡采样实例
+# 新增 LP 引导修复层（Level LP）替换固定离散区间搜索
+#
+# 修复层级：Level 1 (T_delta) → Level 2 (T_cap) → Level 3 (T_L3)
+#         → Level LP (连续参数搜索) → Pair fallback
+#
+# 预期改进：
+#   - ops=2：从 ~30% 提升至 ~45-60%（二分搜索找到精确阈值）
+#   - ops=4：从 0% 提升至有正成功率（缩紧 t_proc + 精确 l_recov）
+#   - ops=6：可能有少量改进（授权域仍是瓶颈）
+
+backend: greedy_lp
+
+restrict_model_ids_from: configs/balanced_600_model_ids.txt
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

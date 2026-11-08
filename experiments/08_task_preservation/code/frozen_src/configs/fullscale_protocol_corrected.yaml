@@ -1,0 +1,47 @@
+protocol_version: 4
+status: fullscale_corrected_baseline
+
+# Corrected reference baseline (history-preserving enumeration) run over the
+# full 36,450-instance grid.  Single repeat: the enumeration + LP oracle are
+# deterministic, so the verdict and runtime are stable; the other methods use
+# 3 repeats only for OS-timing smoothing, which is unnecessary here.
+
+param_slice: 3
+n_seeds: 15
+
+repetition:
+  deterministic_warmup: 0
+  deterministic_repeats: 1
+  simulation_seeds: 15
+
+limits:
+  timeout_seconds: 180
+  memory_gb: 32
+
+solvers:
+  primary_lp: scipy_highs
+  feasibility_tolerance: 1.0e-09
+  optimality_tolerance: 1.0e-09
+
+benchmark_families:
+  rmt_fms:
+    enabled: true
+    machine_counts:         [2, 3, 4, 5, 6, 8, 10]
+    part_type_counts:       [1, 2, 3, 4, 6]
+    operations_per_part:    [2, 4, 6, 8]
+    wip_bounds:             [1, 2, 3, 4]
+    unobservable_ratios:    [0.1, 0.3, 0.5, 0.7]
+    fault_locations:        [1, 2, 4, 8]
+    interval_width_factors: [0.5, 1.0, 1.5, 2.0]
+    adjustable_ratios:      [0.1, 0.25, 0.5, 0.75]
+  boundary:
+    enabled: false
+
+# Corrected reference baseline only (this run does not touch the other methods'
+# existing result files; output is written to results/fullscale_corrected/).
+methods:
+  - mscg_lp_complete
+
+concurrency_cap: 8
+
+checkpoint_interval: 500

@@ -1,0 +1,30 @@
+protocol_version: 3
+status: repair_experiment_balanced_exhaustive
+
+# 均衡采样修复实验（exhaustive 后端）
+# 与 repair_protocol_balanced_greedy.yaml 使用完全相同的 612 实例集合，
+# 仅将后端替换为 exhaustive，用于公平对比。
+#
+# 结果写入 results/repair_balanced_exhaustive/
+
+backend: exhaustive
+
+# 与 greedy 使用完全相同的 612 实例
+restrict_model_ids_from: configs/balanced_600_model_ids.txt
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

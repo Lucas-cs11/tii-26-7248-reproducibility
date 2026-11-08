@@ -1,0 +1,31 @@
+protocol_version: 3
+status: repair_experiment_exhaustive
+
+# Repair 实验（exhaustive 后端）：证书作用域穷举修复。
+# 与 repair_protocol.yaml 使用完全相同的 AMB 实例集合与 extended domain，
+# 仅将修复后端从 greedy（Algorithm S4.3 局部搜索）替换为 exhaustive
+# （certificate-scoped 全枚举），用于与 greedy 基线做修复成功率对比。
+#
+# 结果写入 results/repair_exhaustive/（不覆盖 results/repair/ 的 greedy 基线）。
+
+backend: exhaustive
+
+# 与 greedy 基线运行在完全相同的 300 个 AMB 实例上，保证后端对比公平。
+restrict_model_ids_from: results/repair/repair_results.csv
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 100

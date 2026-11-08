@@ -1,0 +1,39 @@
+protocol_version: 3
+status: repair_sensitivity_r3_5_A_discretization
+
+# R3-5A — Discretization sensitivity (EXPLORATORY, not paper-final data).
+# Fixed: objective O0 (frozen baseline), domain wide, task constraint,
+# verifier, cases, seeds, budgets.  Varied: candidate_density
+# {coarse, base, fine} over the fixed wide semantic envelope.
+
+backend: greedy
+
+output_dir: results/repair_sensitivity_r3_5
+
+restrict_model_ids_from: configs/r3_5_cohort.txt
+
+task_constraint: exact_critical_sequence_preservation
+domain_policy: wide
+
+candidate_densities:
+  - coarse
+  - base
+  - fine
+objective_variant: O0
+
+repair_domains:
+  - extended
+
+limits:
+  verify_timeout_seconds: 120
+  repair_timeout_seconds: 300
+
+verifier:
+  complete_set: true
+  budget: null
+
+input_files:
+  - results/fullscale/fullscale_results.json
+  - results/fullscale_supplement/supplement_results.json
+
+checkpoint_interval: 50
