@@ -211,7 +211,6 @@
     "scg_edges": 245,
     "truncated": false,
     "reachable_markings": 73,
-    "normal_is_fault_free": true,
     "critical_pair": {
      "normal_interval": [
       "30",
@@ -225,7 +224,6 @@
       "30",
       "45"
      ],
-     "ambiguous": true,
      "observable_word": [
       "load_done",
       "load_done",
@@ -260,18 +258,6 @@
     "scg_classes": 613,
     "scg_edges": 1013,
     "scg_truncated": false,
-    "ambiguous_is_true": true,
-    "amb_certificate_ok": true,
-    "amb_certificate": {
-     "normal_found": true,
-     "normal_has_no_fault": true,
-     "faulty_found": true,
-     "faulty_has_fault": true,
-     "identical_observable_word": true,
-     "intervals_overlap": true,
-     "common_duration": true
-    },
-    "common_completion_duration": "27",
     "critical_pair": {
      "observable_word": [
       "machining_done",
@@ -355,240 +341,6 @@
       "27",
       "29"
      ],
-     "normal_contains_fault": false,
-     "faulty_contains_fault": true,
-     "common_duration": "27",
-     "common_duration_schedule": {
-      "normal": [
-       {
-        "transition": "s1",
-        "firing_time": "0"
-       },
-       {
-        "transition": "c1",
-        "firing_time": "3"
-       },
-       {
-        "transition": "s2",
-        "firing_time": "3"
-       },
-       {
-        "transition": "s1",
-        "firing_time": "3"
-       },
-       {
-        "transition": "c2",
-        "firing_time": "5"
-       },
-       {
-        "transition": "s3",
-        "firing_time": "5"
-       },
-       {
-        "transition": "c1",
-        "firing_time": "6"
-       },
-       {
-        "transition": "s2",
-        "firing_time": "6"
-       },
-       {
-        "transition": "c2",
-        "firing_time": "8"
-       },
-       {
-        "transition": "c3",
-        "firing_time": "11"
-       },
-       {
-        "transition": "s4",
-        "firing_time": "11"
-       },
-       {
-        "transition": "s3",
-        "firing_time": "11"
-       },
-       {
-        "transition": "c4",
-        "firing_time": "13"
-       },
-       {
-        "transition": "s5",
-        "firing_time": "13"
-       },
-       {
-        "transition": "c3",
-        "firing_time": "17"
-       },
-       {
-        "transition": "c5",
-        "firing_time": "17"
-       },
-       {
-        "transition": "s4",
-        "firing_time": "17"
-       },
-       {
-        "transition": "s6",
-        "firing_time": "17"
-       },
-       {
-        "transition": "c4",
-        "firing_time": "19"
-       },
-       {
-        "transition": "s5",
-        "firing_time": "19"
-       },
-       {
-        "transition": "c6",
-        "firing_time": "23"
-       },
-       {
-        "transition": "c5",
-        "firing_time": "23"
-       },
-       {
-        "transition": "pass",
-        "firing_time": "23"
-       },
-       {
-        "transition": "s6",
-        "firing_time": "23"
-       },
-       {
-        "transition": "c6",
-        "firing_time": "27"
-       },
-       {
-        "transition": "pass",
-        "firing_time": "27"
-       }
-      ],
-      "faulty": [
-       {
-        "transition": "s1",
-        "firing_time": "0"
-       },
-       {
-        "transition": "c1",
-        "firing_time": "3"
-       },
-       {
-        "transition": "s2",
-        "firing_time": "3"
-       },
-       {
-        "transition": "s1",
-        "firing_time": "3"
-       },
-       {
-        "transition": "c2",
-        "firing_time": "5"
-       },
-       {
-        "transition": "tf",
-        "firing_time": "5"
-       },
-       {
-        "transition": "s3",
-        "firing_time": "5"
-       },
-       {
-        "transition": "rec",
-        "firing_time": "6"
-       },
-       {
-        "transition": "c1",
-        "firing_time": "9"
-       },
-       {
-        "transition": "s2",
-        "firing_time": "9"
-       },
-       {
-        "transition": "c2",
-        "firing_time": "11"
-       },
-       {
-        "transition": "c3",
-        "firing_time": "11"
-       },
-       {
-        "transition": "s4",
-        "firing_time": "11"
-       },
-       {
-        "transition": "s3",
-        "firing_time": "11"
-       },
-       {
-        "transition": "c4",
-        "firing_time": "13"
-       },
-       {
-        "transition": "s5",
-        "firing_time": "13"
-       },
-       {
-        "transition": "c3",
-        "firing_time": "17"
-       },
-       {
-        "transition": "c5",
-        "firing_time": "17"
-       },
-       {
-        "transition": "s4",
-        "firing_time": "17"
-       },
-       {
-        "transition": "s6",
-        "firing_time": "17"
-       },
-       {
-        "transition": "c4",
-        "firing_time": "19"
-       },
-       {
-        "transition": "s5",
-        "firing_time": "19"
-       },
-       {
-        "transition": "c6",
-        "firing_time": "23"
-       },
-       {
-        "transition": "c5",
-        "firing_time": "23"
-       },
-       {
-        "transition": "pass",
-        "firing_time": "23"
-       },
-       {
-        "transition": "s6",
-        "firing_time": "23"
-       },
-       {
-        "transition": "c6",
-        "firing_time": "27"
-       },
-       {
-        "transition": "pass",
-        "firing_time": "27"
-       }
-      ]
-     },
-     "certificate": {
-      "normal_found": true,
-      "normal_has_no_fault": true,
-      "faulty_found": true,
-      "faulty_has_fault": true,
-      "identical_observable_word": true,
-      "intervals_overlap": true,
-      "common_duration": true
-     },
      "ambiguous": true
     }
    }

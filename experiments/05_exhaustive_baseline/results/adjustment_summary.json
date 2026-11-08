@@ -1,0 +1,13 @@
+{
+  "evaluations": 16038,
+  "status": {
+    "ERROR": 40,
+    "VERIFIED_SUCCESS": 2001,
+    "FINITE_SEARCH_FAILURE": 11314,
+    "TIMEOUT": 2683
+  },
+  "method": "one-step exhaustive adjustment, complete-set re-verification",
+  "reference_elapsed_hours": 72.6,
+  "population_total": 16038,
+  "population_covered": 16038
+}

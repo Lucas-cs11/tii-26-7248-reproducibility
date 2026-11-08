@@ -208,37 +208,17 @@ def parse_net(path: str, source_url: str | None = None) -> dict:
 # Model helpers
 # --------------------------------------------------------------------------
 
-def normalize_model(model: dict) -> dict:
-    """Normalize a canonical JSON model to exact Fractions (no precision loss).
-
-    Time endpoints may be ints, decimal strings, exact rational strings such as
-    ``"3/2"``, or ``"inf"``.  They are converted with ``Fraction`` so that a
-    half-second endpoint is never truncated.
-    """
-    from fractions import Fraction as _F
+def load_model(path: str) -> dict:
+    with open(path, encoding="utf-8") as fh:
+        model = json.load(fh)
+    # normalize the canonical JSON: "inf" string is used by pipeline/tina_net.py
     for t in model.get("transitions", []):
-        for key in ("earliest", "latest"):
-            v = t.get(key)
-            if v is None or v == "inf":
-                t[key] = None
-            elif isinstance(v, str):
-                t[key] = _F(v)
-            elif isinstance(v, int):
-                t[key] = _F(v)
-            elif isinstance(v, float):
-                t[key] = _F(v)  # exact binary float, only for legacy data
-        if t.get("latest") is None and t.get("earliest") != 0:
-            pass
+        if t.get("latest") in ("inf", None) and t.get("latest") != 0:
+            t["latest"] = None
         for key in ("inputs", "outputs", "read", "inhibitor", "stopwatch"):
             if key not in t or t[key] is None:
                 t[key] = {}
     return model
-
-
-def load_model(path: str) -> dict:
-    with open(path, encoding="utf-8") as fh:
-        model = json.load(fh)
-    return normalize_model(model)
 
 
 def model_maps(model: dict):
@@ -312,7 +292,6 @@ def dbm_to_json(D: list[list], names: list) -> dict:
 
 class SCG:
     def __init__(self, model: dict, max_classes: int = 200_000):
-        model = normalize_model(model)
         self.model = model
         self.init, self.trans = model_maps(model)
         self.max_classes = max_classes
@@ -340,19 +319,8 @@ class SCG:
         return names, D
 
     def _key(self, marking, names, D):
-        """Canonical key: marking + DBM over globally sorted enabled names.
-
-        The successor construction orders persistent transitions before newly
-        enabled ones; equal classes reached through different groupings must
-        still merge.  Re-indexing into sorted variable order makes the key a
-        true canonical form (the previous key could split a class into two).
-        """
         mk = tuple(sorted((p, marking[p]) for p in marking if marking[p]))
-        order = [0] + sorted((i for i, nm in enumerate(names) if i != 0),
-                             key=lambda i: names[i])
-        canonical_names = tuple("0" if i == 0 else names[i] for i in order)
-        canonical = tuple(tuple(D[i][j] for j in order) for i in order)
-        return mk, canonical_names, canonical
+        return mk, tuple(names), dbm_key(D)
 
     def build(self) -> "SCG":
         names, D = self._initial()
@@ -421,17 +389,11 @@ class SCG:
         return self
 
     def _is_finish(self, marking) -> bool:
-        """Exact marking match (same convention as the production verifier).
-
-        Every place of the union must have exactly the target count; extra
-        tokens elsewhere mean the task is not complete.
-        """
         specs = self.model.get("finish_markings") or []
         if not specs:
             return False
         for spec in specs:
-            places = set(marking) | set(spec)
-            if all(marking.get(p, 0) == spec.get(p, 0) for p in places):
+            if all(marking.get(p, 0) == v for p, v in spec.items()):
                 return True
         return False
 
@@ -493,7 +455,6 @@ class FiringDomain:
     """Exact completion-time interval of a structurally feasible sequence."""
 
     def __init__(self, model: dict):
-        model = normalize_model(model)
         self.model = model
         self.init, self.trans = model_maps(model)
 
@@ -570,45 +531,6 @@ class FiringDomain:
         gu = d0[n]
         gl = -dn[0] if dn[0] is not None else None
         return gl, gu
-
-    def feasible_at(self, seq, value, *, return_schedule=False):
-        """Exact check that the *last* firing of ``seq`` occurs at ``value``.
-
-        The firing-domain constraints are difference constraints over the
-        global firing dates ``S_i`` with ``S_0 = 0``.  Equality ``S_n = value``
-        is imposed by adding both ``S_n - S_0 <= value`` and
-        ``S_0 - S_n <= -value`` and re-running Bellman-Ford: the augmented
-        system is feasible iff there is no negative cycle.  The shortest-path
-        distances are then themselves a valid schedule (after normalising
-        ``S_0 = 0``), so ``return_schedule=True`` also yields a concrete timed
-        execution, as a list of ``(transition, firing_time)`` with exact
-        ``Fraction`` firing times.
-
-        This is used by the AMB-certificate regression test to check that the
-        normal and the faulty completion really share a *common duration*, not
-        merely overlapping bounds.
-        """
-        cons, _final, steps = self.constraints(seq)
-        n = len(seq)
-        value = Fraction(value)
-        edges = list(cons) + [(0, n, value), (n, 0, -value)]
-        dist = [Fraction(0)] * (n + 1)  # implicit super-source to every node
-        for _ in range(n + 1):
-            changed = False
-            for (j, i, c) in edges:
-                v = dist[j] + c
-                if v < dist[i]:
-                    dist[i] = v
-                    changed = True
-            if not changed:
-                if return_schedule:
-                    base = dist[0]
-                    return True, [(steps[i - 1][1], dist[i] - base)
-                                  for i in range(1, n + 1)]
-                return True
-        if return_schedule:
-            return False, None
-        return False
 
     def feasible(self, seq) -> bool:
         try:

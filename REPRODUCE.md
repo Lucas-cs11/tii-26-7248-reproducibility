@@ -108,31 +108,44 @@ completed, 820 wall-clock-capped).
 
 ## 5. Verifier timing (Fig. 3)
 
+The per-case timing table is shipped as `experiments/03_verifier_timing/results/timing_all_rows.csv.gz`
+(36,450 rows) together with `timing_summary.json` (counts and runtime quantiles:
+median 8.1 ms, P95 0.92 s, maximum 5.59 s; verdicts VER 20,412 / AMB 16,038).
+
 ```bash
-# 255 partitions x 143 evaluations, method "main", 3 repeats, 60 s cap
-python experiments/03_verifier_timing/runner/run_shard.py --shard <NNN> --out results/
+# measure one partition from scratch (60 s cap per evaluation, 3 repeats)
+python experiments/03_verifier_timing/driver/run_shard.py --shard 000 --out results/
 ```
 
-The curated package keeps one partition as an example; the full 255-partition
-output remains in the archived companion repository.
+The frozen evaluation list (255 partitions) remains in the archived companion
+repository `tii-26-7248-verifier-timing`; the verifier implementation is
+`experiments/01_scalability/code/src/`.
 
 ## 6. Ambiguity-horizon study
 
-Fixed implementation and configuration:
-`experiments/04_ambiguity_horizon/experiment/` (`run_threshold.py`,
-`h_sensitivity_config.json`). The remaining 1,140 models are defined in the
-archived companion repository; the lab-completed part is not redistributed.
+The aggregate result is `experiments/04_ambiguity_horizon/results/threshold_summary.json`
+(4,068 models covered by the archived artifacts; threshold `H_amb*/H_base`
+median 0.231, P05–P95 0.141–0.333). Fixed implementation and configuration:
+`experiments/04_ambiguity_horizon/experiment/`.
 
 ```bash
 python experiments/04_ambiguity_horizon/experiment/run_threshold.py --help
 ```
 
+The cohort definitions are indexed in `cohorts/index.json`; the cohort CSV files
+and the lab-completed part remain in the archived repository.
+
 ## 7. One-step exhaustive adjustment baseline
 
-Fixed population (`population/full_amb_population.csv.gz`, 16,038 AMB
-evaluations), sharding and benchmark tools:
-`experiments/05_exhaustive_baseline/`. The full partition results remain in the
-archived companion repository; `shards/calib.json` is the calibration sample.
+The complete population result is
+`experiments/05_exhaustive_baseline/results/adjustment_summary.json`:
+16,038 evaluations — 2,001 verified successes, 11,314 finite-search failures,
+2,683 wall-clock-capped, 40 errors (≈72.6 h of runner time in total).
+
+Fixed population (`population/full_amb_population.csv.gz`), the 32-partition
+plan (`shards/index.json`) and the sharding/benchmark tools are shipped here;
+the full per-evaluation result rows remain in the archived companion
+repository `tii-26-7248-exhaustive-full`.
 
 ## 8. Case studies
 

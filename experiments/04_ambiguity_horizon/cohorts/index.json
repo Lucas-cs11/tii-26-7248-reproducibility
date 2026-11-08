@@ -1,0 +1,206 @@
+{
+ "n_shards": 40,
+ "total": 1140,
+ "shards": [
+  {
+   "shard": 0,
+   "file": "cohorts/shard_000.csv",
+   "n": 29
+  },
+  {
+   "shard": 1,
+   "file": "cohorts/shard_001.csv",
+   "n": 29
+  },
+  {
+   "shard": 2,
+   "file": "cohorts/shard_002.csv",
+   "n": 29
+  },
+  {
+   "shard": 3,
+   "file": "cohorts/shard_003.csv",
+   "n": 29
+  },
+  {
+   "shard": 4,
+   "file": "cohorts/shard_004.csv",
+   "n": 29
+  },
+  {
+   "shard": 5,
+   "file": "cohorts/shard_005.csv",
+   "n": 29
+  },
+  {
+   "shard": 6,
+   "file": "cohorts/shard_006.csv",
+   "n": 29
+  },
+  {
+   "shard": 7,
+   "file": "cohorts/shard_007.csv",
+   "n": 29
+  },
+  {
+   "shard": 8,
+   "file": "cohorts/shard_008.csv",
+   "n": 29
+  },
+  {
+   "shard": 9,
+   "file": "cohorts/shard_009.csv",
+   "n": 29
+  },
+  {
+   "shard": 10,
+   "file": "cohorts/shard_010.csv",
+   "n": 29
+  },
+  {
+   "shard": 11,
+   "file": "cohorts/shard_011.csv",
+   "n": 29
+  },
+  {
+   "shard": 12,
+   "file": "cohorts/shard_012.csv",
+   "n": 29
+  },
+  {
+   "shard": 13,
+   "file": "cohorts/shard_013.csv",
+   "n": 29
+  },
+  {
+   "shard": 14,
+   "file": "cohorts/shard_014.csv",
+   "n": 29
+  },
+  {
+   "shard": 15,
+   "file": "cohorts/shard_015.csv",
+   "n": 29
+  },
+  {
+   "shard": 16,
+   "file": "cohorts/shard_016.csv",
+   "n": 29
+  },
+  {
+   "shard": 17,
+   "file": "cohorts/shard_017.csv",
+   "n": 29
+  },
+  {
+   "shard": 18,
+   "file": "cohorts/shard_018.csv",
+   "n": 29
+  },
+  {
+   "shard": 19,
+   "file": "cohorts/shard_019.csv",
+   "n": 29
+  },
+  {
+   "shard": 20,
+   "file": "cohorts/shard_020.csv",
+   "n": 28
+  },
+  {
+   "shard": 21,
+   "file": "cohorts/shard_021.csv",
+   "n": 28
+  },
+  {
+   "shard": 22,
+   "file": "cohorts/shard_022.csv",
+   "n": 28
+  },
+  {
+   "shard": 23,
+   "file": "cohorts/shard_023.csv",
+   "n": 28
+  },
+  {
+   "shard": 24,
+   "file": "cohorts/shard_024.csv",
+   "n": 28
+  },
+  {
+   "shard": 25,
+   "file": "cohorts/shard_025.csv",
+   "n": 28
+  },
+  {
+   "shard": 26,
+   "file": "cohorts/shard_026.csv",
+   "n": 28
+  },
+  {
+   "shard": 27,
+   "file": "cohorts/shard_027.csv",
+   "n": 28
+  },
+  {
+   "shard": 28,
+   "file": "cohorts/shard_028.csv",
+   "n": 28
+  },
+  {
+   "shard": 29,
+   "file": "cohorts/shard_029.csv",
+   "n": 28
+  },
+  {
+   "shard": 30,
+   "file": "cohorts/shard_030.csv",
+   "n": 28
+  },
+  {
+   "shard": 31,
+   "file": "cohorts/shard_031.csv",
+   "n": 28
+  },
+  {
+   "shard": 32,
+   "file": "cohorts/shard_032.csv",
+   "n": 28
+  },
+  {
+   "shard": 33,
+   "file": "cohorts/shard_033.csv",
+   "n": 28
+  },
+  {
+   "shard": 34,
+   "file": "cohorts/shard_034.csv",
+   "n": 28
+  },
+  {
+   "shard": 35,
+   "file": "cohorts/shard_035.csv",
+   "n": 28
+  },
+  {
+   "shard": 36,
+   "file": "cohorts/shard_036.csv",
+   "n": 28
+  },
+  {
+   "shard": 37,
+   "file": "cohorts/shard_037.csv",
+   "n": 28
+  },
+  {
+   "shard": 38,
+   "file": "cohorts/shard_038.csv",
+   "n": 28
+  },
+  {
+   "shard": 39,
+   "file": "cohorts/shard_039.csv",
+   "n": 28
+  }
+ ]
+}
