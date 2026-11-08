@@ -1,0 +1,13 @@
+{
+  "shard": 45,
+  "shards": 80,
+  "cells": 24,
+  "cases": 72,
+  "status_counts": {
+    "RECONSTRUCTED_SUCCESS": 37,
+    "NO_CANDIDATE": 29,
+    "INFRA_TIMEOUT_OR_ERROR": 6
+  },
+  "reconstruction_mismatch": 4,
+  "wall_s": 11013.53
+}

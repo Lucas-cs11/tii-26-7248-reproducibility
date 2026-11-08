@@ -1,0 +1,104 @@
+{
+  "run_id": "42475575928",
+  "workflow": "r3_2_phaseA_pilot",
+  "commit": "a0d1553",
+  "platform": "GitHub Actions ubuntu-22.04, Python 3.11.18, numpy 2.4.6, scipy 1.16.2",
+  "coverage": {
+    "shards": 80,
+    "records": 5826,
+    "evaluations": 1942,
+    "of_pilot": 1942,
+    "coverage_rate": 1.0
+  },
+  "reconstruction_fidelity": {
+    "success_exact_match": 3060,
+    "other_consistent": 2307,
+    "other_compute_limit": 336,
+    "success_compute_limit": 2,
+    "success_TRUE_MISMATCH": 1
+  },
+  "true_mismatches": [
+    [
+      "fs_m3_j2_k2_w2_ur50_fl2_wf5_ar10_s6",
+      "coquand"
+    ]
+  ],
+  "expected_status_distribution": {
+    "VERIFIED_SUCCESS": 3063,
+    "NO_IMPROVING_CANDIDATE": 816,
+    "FINITE_SEARCH_FAILURE": 1350,
+    "TIMEOUT": 597
+  },
+  "flips": {
+    "TIMEOUT_to_success": 111,
+    "NO_IMPROVING_CANDIDATE_to_success": 6,
+    "FINITE_SEARCH_FAILURE_to_success": 3
+  },
+  "fresh_successes": 3181,
+  "predicate_by_method": {
+    "cpgld": {
+      "n": 1854,
+      "path": 1633,
+      "path_rate": 0.8808,
+      "psi0": 1090,
+      "psi0_rate": 0.5879,
+      "psi5": 1378,
+      "psi5_rate": 0.7433,
+      "psi10": 1633,
+      "psi10_rate": 0.8808,
+      "lost_normal": 11,
+      "lost_fault": 221,
+      "undetermined": 0
+    },
+    "coquand": {
+      "n": 1073,
+      "path": 1017,
+      "path_rate": 0.9478,
+      "psi0": 1017,
+      "psi0_rate": 0.9478,
+      "psi5": 1017,
+      "psi5_rate": 0.9478,
+      "psi10": 1017,
+      "psi10_rate": 0.9478,
+      "lost_normal": 0,
+      "lost_fault": 56,
+      "undetermined": 0
+    },
+    "exhaustive": {
+      "n": 254,
+      "path": 217,
+      "path_rate": 0.8543,
+      "psi0": 217,
+      "psi0_rate": 0.8543,
+      "psi5": 217,
+      "psi5_rate": 0.8543,
+      "psi10": 217,
+      "psi10_rate": 0.8543,
+      "lost_normal": 1,
+      "lost_fault": 37,
+      "undetermined": 0
+    }
+  },
+  "predicate_all": {
+    "n": 3181,
+    "path_pass": 2867,
+    "psi0": 2324,
+    "psi5": 2612,
+    "psi10": 2867,
+    "lost_normal": 12,
+    "lost_fault": 314,
+    "undetermined": 0
+  },
+  "compute_limit_by_method": {
+    "cpgld": 88,
+    "coquand": 40,
+    "exhaustive": 210
+  },
+  "no_candidate_by_method": {
+    "coquand": 829,
+    "exhaustive": 1478
+  },
+  "shard_wall_hours_total": 139.0,
+  "shard_wall_mean_min": 104.0,
+  "shard_wall_max_min": 184.0
+}
