@@ -1,0 +1,31 @@
+{
+  "experiment": "tii_tpn_h_sensitivity",
+  "protocol_version": 1,
+  "execution_environment": "local_apple_m4",
+  "source_sweep_dir": "/Users/lucas/tii_tpn_h_sensitivity/source_h_sweep",
+  "source_raw_csv": "/Users/lucas/tii_tpn_h_sensitivity/source_h_sweep/h_sweep_raw.csv",
+  "source_validation_json": "/Users/lucas/tii_tpn_h_sensitivity/source_h_sweep/validation.json",
+  "workers": 2,
+  "timeout_seconds_per_analysis": 350,
+  "threshold_case_timeout_seconds": 18000,
+  "complete_analysis_timeout_seconds_per_level": 180,
+  "complete_analysis_relative_levels": [
+    0.8,
+    1.0,
+    1.2,
+    1.5,
+    2.0
+  ],
+  "direct_timeout_seconds": 30,
+  "threshold_upper_ratio": 0.5,
+  "threshold_epsilon_ratio": 1e-06,
+  "threshold_bisection_iterations": 8,
+  "witness_descent_max_iterations": 16,
+  "threshold_smoke_models": 30,
+  "complete_analysis_pilot_models": 40,
+  "complete_analysis_target_models": 750,
+  "minimum_free_disk_mb": 1536,
+  "maximum_experiment_size_mb": 1024,
+  "checkpoint_rows": 10,
+  "cohort_seed": 20261031
+}

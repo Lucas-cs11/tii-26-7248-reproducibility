@@ -1,0 +1,75 @@
+{
+  "analysis_dir": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal",
+  "caption": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6_caption.md",
+  "cell_timeout_s": 60.0,
+  "censoring": {
+    "aggregate_mode_note": "With large samples panels (b)/(c) show median + IQR of COMPLETED cells only plus an explicit censored share; a censored cell is never imputed and never enters the median.",
+    "inc_is_not_zero": true,
+    "inc_marker": "hollow diamond at the real analysis time",
+    "timeout_marker": "open upward triangle on the dashed cap line",
+    "timeout_value": "plotted at the cap, never at the wall clock"
+  },
+  "dataset_protocol": "v6-formal-1",
+  "figure": "Figure 6 (FORMAL)",
+  "files": {
+    "eps": {
+      "bytes": 446234,
+      "path": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6.eps"
+    },
+    "pdf": {
+      "bytes": 84024,
+      "path": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6.pdf"
+    },
+    "png": {
+      "bytes": 284264,
+      "path": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6.png"
+    },
+    "svg": {
+      "bytes": 238481,
+      "path": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6.svg"
+    }
+  },
+  "is_formal": true,
+  "matplotlib_version": "3.11.2",
+  "panels": {
+    "a": {
+      "experiment": "A_structural",
+      "n_amb": 207,
+      "n_completed": 600,
+      "n_inc": 50,
+      "n_timeout": 0,
+      "n_total": 600,
+      "n_ver": 343,
+      "x": "model size",
+      "y": "SCG + verify analysis time (s, log)"
+    },
+    "b": {
+      "experiment": "B_wip",
+      "n_amb": 434,
+      "n_completed": 628,
+      "n_inc": 30,
+      "n_timeout": 452,
+      "n_total": 1080,
+      "n_ver": 164,
+      "x": "WIP bound",
+      "y": "SCG + verify analysis time (s, log)"
+    },
+    "c": {
+      "experiment": "C_Lsweep",
+      "n_amb": 2054,
+      "n_completed": 3249,
+      "n_inc": 0,
+      "n_timeout": 2151,
+      "n_total": 5400,
+      "n_ver": 1195,
+      "x": "depth limit L",
+      "y": "SCG + verify analysis time (s, log)"
+    }
+  },
+  "plot_data": "/home/runner/work/tii-26-7248-scalability-v2/tii-26-7248-scalability-v2/work/v6_analysis_formal/figure6_data.csv",
+  "python": "3.13.18",
+  "rendering": {
+    "panel_b_aggregate": true,
+    "panel_c_aggregate": true
+  }
+}
