@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ADJ = ROOT
 POP = ROOT/"data/frozen/full_amb_population.csv.gz"
 POP_META = json.loads((ROOT/"data/frozen/full_amb_population_meta.json").read_text())
-VAL = json.loads((ADJ/"validation/full_adjustment_validation.json").read_text())
+VAL = json.loads((ADJ/"data/frozen/full_adjustment_validation.json").read_text())
 PARAM_FIELDS = ["n_machines","n_parts","ops_per_part","wip_bound","unobservable_ratio","fault_locations","interval_width_factor","adjustable_ratio","seed"]
 
 def sha256(p):
