@@ -95,7 +95,7 @@ platforms.
 * **Raw scalability records** (8,280 JSON records, per-partition ledgers,
   metrics and hash manifests) are published as the release asset
   `scalability-evaluations` in the archived companion repository
-  `tii-26-7248-scalability-v2` (25.1 MB). The checked-in
+  `tii-26-7248-scalability-archive` (25.1 MB). The checked-in
   `results/statistics.json` and `results/audit.json` are derived from them.
 * **Independent audit:** GitHub Actions run `42434059038` — PASS: 8,280
   evaluations, 8,280 unique identifiers, 120 worker partitions, 0 technical
@@ -110,8 +110,18 @@ platforms.
 ## 6. Archived companion repositories
 
 This package consolidates previously separate experiment repositories. They
-remain public as archives with their full raw data and are linked from the
-relevant experiment folders.
+remain public as archives with their full raw data:
+
+| Archive | Content kept in this package |
+|---|---|
+| [`tii-26-7248-scalability-archive`](https://github.com/Lucas-cs11/tii-26-7248-scalability-archive) | scalability study, implementation equivalence, historical audit, cloud execution, raw records |
+| [`tii-26-7248-verifier-timing`](https://github.com/Lucas-cs11/tii-26-7248-verifier-timing) | per-case verifier timing (Fig. 3) |
+| [`tii-26-7248-h-sensitivity`](https://github.com/Lucas-cs11/tii-26-7248-h-sensitivity) | ambiguity-horizon study |
+| [`tii-26-7248-exhaustive-full`](https://github.com/Lucas-cs11/tii-26-7248-exhaustive-full) | one-step exhaustive adjustment baseline |
+| [`tii-published-tpn-case-eval`](https://github.com/Lucas-cs11/tii-published-tpn-case-eval) | published-net case studies |
+| [`tii-illustrative-tpn-case`](https://github.com/Lucas-cs11/tii-illustrative-tpn-case) | illustrative case |
+| [`tii-context-case-study`](https://github.com/Lucas-cs11/tii-context-case-study) | context-dataset study |
+| [`tii-26-7248-scalability-early-archive`](https://github.com/Lucas-cs11/tii-26-7248-scalability-early-archive) | superseded early design, kept for history only |
 
 ## 7. Reviewer checklist
 

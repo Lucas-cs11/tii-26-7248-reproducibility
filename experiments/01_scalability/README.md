@@ -56,7 +56,7 @@ python code/scripts/plot_figure6.py --analysis-dir results --out /tmp/fig6
 
 The 8,280 raw JSON records, the per-partition ledgers, metrics and hash
 manifests are published as the release asset `scalability-evaluations` in the
-archived companion repository `tii-26-7248-scalability-v2` (25.1 MB). The
+archived companion repository `tii-26-7248-scalability-archive` (25.1 MB). The
 checked-in `results/statistics.json` and `results/audit.json` are derived from
 those files by `analyze_results.py` and `audit_results.py`.
 

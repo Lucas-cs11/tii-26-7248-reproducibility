@@ -3,7 +3,7 @@
 ## What is checked in
 
 * Pre-registered protocols (task manifest, partition plan, evaluation grid,
-  semantics gate) and the pre-registered protocol description.
+  semantics reference) and the pre-registered protocol description.
 * Execution code (per-evaluation runner, verifier implementation, cloud
   application, analysis/audit/plot scripts) and unit tests.
 * Result summaries: statistics, audit, Figure 6, acceptance report and the
@@ -16,7 +16,7 @@ The bulk raw data are not stored in git:
 
 | Artifact | Size | Location |
 |---|---:|---|
-| 8,280 raw evaluation records, per-partition ledgers, metrics, hash manifests | 25.1 MB | release asset `scalability-evaluations` in the archived repository `tii-26-7248-scalability-v2` |
+| 8,280 raw evaluation records, per-partition ledgers, metrics, hash manifests | 25.1 MB | release asset `scalability-evaluations` in the archived repository `tii-26-7248-scalability-archive` |
 | 36,450-row timing table | — | archived repository `tii-26-7248-verifier-timing` |
 | ambiguity-horizon cohorts (1,140 models) and lab results | — | archived repository `tii-26-7248-h-sensitivity` |
 | exhaustive-baseline partitions (40) | — | archived repository `tii-26-7248-exhaustive-full` |
