@@ -2,14 +2,14 @@
 
 ## Verdicts
 
-### DATA_AND_PROVENANCE_AUDIT_COMPLETE ✅
+### DATA_AND_PROVENANCE_AUDIT_COMPLETE ✅ (all anomalies resolved)
 
 - 5,826 records: unique, complete, traceable to the frozen manifest.
 - 1,942 instances: deterministic stratified sampling from 16,038, frozen protocol.
 - 1 Coquand reconstruction discrepancy: resolved (multiple valid LP solutions).
 - 120 outcome flips: fully explained (absence of per-case timeout in pilot).
 - 338 unresolved records: classified (336 originally-timeout + 2 compute-limited).
-- 2 originally-successful non-repeated cases: identified (subprocess timeout).
+- 2 originally-successful non-repeated cases: **resolved** (both reconstruct exactly, both VER, both fail task preservation — legitimate successes that lose fault paths).
 - Commit identity confirmed: `a0d1553` = execution, `64ebb3b` = delivery only.
 - All frozen records unchanged.
 
