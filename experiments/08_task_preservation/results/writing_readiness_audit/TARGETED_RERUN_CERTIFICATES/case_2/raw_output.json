@@ -1,0 +1,194 @@
+{
+  "evaluation_id": "fs_m4_j2_k2_w2_ur30_fl2_wf15_ar25_s1",
+  "method": "cpgld",
+  "expected_status": "VERIFIED_SUCCESS",
+  "L": 10,
+  "H": 39.0,
+  "initial_model_hash": "ef5c987efadbc4e8",
+  "n_adjustable": 6,
+  "initial_verdict": "AMB",
+  "initial_certs": 15856,
+  "reference": {
+    "regime": "sampled",
+    "n_normal": 3,
+    "n_fault": 3,
+    "n_normal_available": 630,
+    "n_fault_available": 944,
+    "baseline_undetermined": 0
+  },
+  "reconstruction": {
+    "candidate": true,
+    "final_model_hash": "39962c0cdb2fb439",
+    "modified_transition_count": 2,
+    "fresh_verdict": "VER",
+    "fresh_certs": 0,
+    "CI": "6.3125",
+    "hash_match": true,
+    "modified_match": false,
+    "CI_match": false
+  },
+  "fresh_success": true,
+  "predicate": {
+    "path_pass": false,
+    "lost_normal": 0,
+    "lost_fault": 3,
+    "undetermined": 0,
+    "perf_tiers": {
+      "0": false,
+      "5": false,
+      "10": true
+    },
+    "psi_pass": {
+      "0": false,
+      "5": false,
+      "10": false
+    },
+    "normal_rows": [
+      {
+        "word": [
+          "t_release_j1",
+          "t_release_j2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "RETAINED",
+        "t_min": "15/4",
+        "t_min_base": "7/2",
+        "delta": "1/4",
+        "tier_0": false,
+        "tier_5": false,
+        "tier_10": true
+      },
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "RETAINED",
+        "t_min": "19/4",
+        "t_min_base": "9/2",
+        "delta": "1/4",
+        "tier_0": false,
+        "tier_5": false,
+        "tier_10": true
+      },
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_complete_j1",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        "status": "RETAINED",
+        "t_min": "11/2",
+        "t_min_base": "21/4",
+        "delta": "1/4",
+        "tier_0": false,
+        "tier_5": true,
+        "tier_10": true
+      }
+    ],
+    "fault_rows": [
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_fault_j2_op1_m3_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_recov_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_complete_j1",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      },
+      {
+        "word": [
+          "t_release_j1",
+          "t_release_j2",
+          "t_fault_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_recov_j2_op1_m3_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      },
+      {
+        "word": [
+          "t_release_j1",
+          "t_release_j2",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_fault_j2_op1_m3_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_recov_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_complete_j1",
+          "t_trans_j2_op2_m4_cfg1",
+          "t_proc_j2_op2_m4_cfg1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      }
+    ]
+  },
+  "status": "RECONSTRUCTED_SUCCESS",
+  "wall_s": 477.37
+}

@@ -1,0 +1,25 @@
+{
+  "case": "fs_m3_j2_k2_w2_ur50_fl2_wf5_ar10_s6",
+  "method": "coquand",
+  "candidate_hash": "d076ab72c93739f7",
+  "expected_hash": "7868dcfd319e2666",
+  "hash_match": false,
+  "fresh_verdict": "VER",
+  "fresh_certificates": 0,
+  "changes": 2,
+  "path_pass": false,
+  "psi_pass": {
+    "0": false,
+    "5": false,
+    "10": false
+  },
+  "lost_word_numeric_status": {
+    "fault:t_release_j1,t_release_j2,t_trans_j1_op1_m1_cfg1,t_fault_j2_op1_m3_cfg1,t_proc_j1_op1_m1_cfg1,t_chain_j1_op1_to_op2,t_recov_j2_op1_m3_cfg1,t_proc_j2_op1_m3_cfg1,t_chain_j2_op1_to_op2,t_trans_j1_op2_m2_cfg1,t_trans_j2_op2_m1_cfg1,t_proc_j2_op2_m1_cfg1,t_proc_j1_op2_m2_cfg1,t_complete_j2,t_complete_j1,t_task_done": {
+      "min_status": "INFEASIBLE",
+      "max_status": "INFEASIBLE",
+      "min_value": null,
+      "max_value": null
+    }
+  },
+  "certificate": "/private/tmp/paperhub/experiments/08_task_preservation/results/writing_readiness_audit/certificates/fs_m3_j2_k2_w2_ur50_fl2_wf5_ar10_s6/certificate.json"
+}

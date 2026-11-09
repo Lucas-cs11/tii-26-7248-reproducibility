@@ -1,0 +1,25 @@
+{
+  "evaluation_id": "fs_m4_j2_k2_w2_ur30_fl2_wf15_ar25_s1",
+  "exit_code": 0,
+  "input_model_hash": "ef5c987efadbc4e8",
+  "actual_wall_s": 477.37,
+  "fresh_verdict": "VER",
+  "fresh_certificates": 0,
+  "frozen_final_model_hash": "39962c0cdb2fb439",
+  "rerun_final_model_hash": "39962c0cdb2fb439",
+  "hash_match": true,
+  "frozen_modified_transition_count": 2,
+  "rerun_modified_transition_count": 2,
+  "modified_count_match": true,
+  "frozen_CI": 6.3125,
+  "rerun_CI": 6.3125,
+  "CI_match_with_tolerance_1e-9": true,
+  "task_path_pass": false,
+  "task_psi_pass": {
+    "0": false,
+    "5": false,
+    "10": false
+  },
+  "note": "The original invocation used placeholder expected CI/modified fields; this independent validation compares actual rerun values against the frozen CSV.",
+  "PASS": true
+}

@@ -1,0 +1,2651 @@
+{
+  "evaluation_id": "fs_m3_j2_k2_w2_ur30_fl4_wf10_ar10_s11",
+  "method": "cpgld",
+  "original_parameters": {
+    "n_machines": 3,
+    "n_parts": 2,
+    "ops_per_part": 2,
+    "wip_bound": 2,
+    "unobservable_ratio": 0.3,
+    "fault_locations": 4,
+    "interval_width_factor": 1.0,
+    "adjustable_ratio": 0.1,
+    "seed": 11
+  },
+  "L": 10,
+  "H": 36.0,
+  "initial_model_hash": "1ec25caf5d334610",
+  "original_model": {
+    "places": [
+      "p1_done",
+      "p1_op1_at_m1_cfg1",
+      "p1_op1_at_m1_cfg2",
+      "p1_op1_end",
+      "p1_op1_fault_m1_cfg1",
+      "p1_op1_fault_m1_cfg2",
+      "p1_op1_start",
+      "p1_op2_at_m2_cfg1",
+      "p1_op2_at_m2_cfg2",
+      "p1_op2_end",
+      "p1_op2_fault_m2_cfg1",
+      "p1_op2_fault_m2_cfg2",
+      "p1_op2_start",
+      "p1_ready",
+      "p2_done",
+      "p2_op1_at_m3_cfg1",
+      "p2_op1_at_m3_cfg2",
+      "p2_op1_end",
+      "p2_op1_fault_m3_cfg1",
+      "p2_op1_fault_m3_cfg2",
+      "p2_op1_start",
+      "p2_op2_at_m1_cfg1",
+      "p2_op2_at_m1_cfg2",
+      "p2_op2_end",
+      "p2_op2_fault_m1_cfg1",
+      "p2_op2_fault_m1_cfg2",
+      "p2_op2_start",
+      "p2_ready",
+      "p_machine_1_cap",
+      "p_machine_1_cfg_1",
+      "p_machine_1_cfg_2",
+      "p_machine_2_cap",
+      "p_machine_2_cfg_1",
+      "p_machine_2_cfg_2",
+      "p_machine_3_cap",
+      "p_machine_3_cfg_1",
+      "p_machine_3_cfg_2",
+      "p_wip_capacity",
+      "task_done_place"
+    ],
+    "transitions": {
+      "t_chain_j1_op1_to_op2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_chain_j2_op1_to_op2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_complete_j1": {
+        "label": "complete_j1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_complete_j2": {
+        "label": "complete_j2",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_fault_j1_op1_m1_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op1_m1_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op1_m3_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op1_m3_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op2_m1_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op2_m1_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_proc_j1_op1_m1_cfg1": {
+        "label": "proc_j1_op1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j1_op1_m1_cfg2": {
+        "label": "proc_j1_op1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j1_op2_m2_cfg1": {
+        "label": "proc_j1_op2_m2",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j1_op2_m2_cfg2": {
+        "label": "proc_j1_op2_m2",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j2_op1_m3_cfg1": {
+        "label": "proc_j2_op1_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j2_op1_m3_cfg2": {
+        "label": "proc_j2_op1_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j2_op2_m1_cfg1": {
+        "label": "proc_j2_op2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j2_op2_m1_cfg2": {
+        "label": "proc_j2_op2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_recov_j1_op1_m1_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j1_op1_m1_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op1_m3_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op1_m3_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op2_m1_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op2_m1_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_release_j1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_release_j2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_task_done": {
+        "label": "task_done",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_trans_j1_op1_m1_cfg1": {
+        "label": "transfer_j1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op1_m1_cfg2": {
+        "label": "transfer_j1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op1_m3_cfg1": {
+        "label": "transfer_j2_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op1_m3_cfg2": {
+        "label": "transfer_j2_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op2_m1_cfg1": {
+        "label": "transfer_j2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op2_m1_cfg2": {
+        "label": "transfer_j2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    "arcs": [
+      [
+        "p1_done",
+        "t_task_done"
+      ],
+      [
+        "p1_op1_at_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_at_m1_cfg2",
+        "t_proc_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_end",
+        "t_chain_j1_op1_to_op2"
+      ],
+      [
+        "p1_op1_fault_m1_cfg1",
+        "t_recov_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_fault_m1_cfg2",
+        "t_recov_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_start",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_start",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_start",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_start",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op2_at_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_at_m2_cfg2",
+        "t_proc_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_end",
+        "t_complete_j1"
+      ],
+      [
+        "p1_op2_fault_m2_cfg1",
+        "t_recov_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_fault_m2_cfg2",
+        "t_recov_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_start",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_start",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_start",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_start",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_ready",
+        "t_release_j1"
+      ],
+      [
+        "p2_done",
+        "t_task_done"
+      ],
+      [
+        "p2_op1_at_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_at_m3_cfg2",
+        "t_proc_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_end",
+        "t_chain_j2_op1_to_op2"
+      ],
+      [
+        "p2_op1_fault_m3_cfg1",
+        "t_recov_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_fault_m3_cfg2",
+        "t_recov_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_start",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_start",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_start",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_start",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op2_at_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_at_m1_cfg2",
+        "t_proc_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_end",
+        "t_complete_j2"
+      ],
+      [
+        "p2_op2_fault_m1_cfg1",
+        "t_recov_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_fault_m1_cfg2",
+        "t_recov_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_start",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_start",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_start",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_start",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_ready",
+        "t_release_j2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cfg_1",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cfg_1",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cfg_2",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cfg_2",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cfg_1",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cfg_1",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cfg_2",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cfg_2",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_wip_capacity",
+        "t_release_j1"
+      ],
+      [
+        "p_wip_capacity",
+        "t_release_j2"
+      ],
+      [
+        "t_chain_j1_op1_to_op2",
+        "p1_op2_start"
+      ],
+      [
+        "t_chain_j2_op1_to_op2",
+        "p2_op2_start"
+      ],
+      [
+        "t_complete_j1",
+        "p1_done"
+      ],
+      [
+        "t_complete_j1",
+        "p_wip_capacity"
+      ],
+      [
+        "t_complete_j2",
+        "p2_done"
+      ],
+      [
+        "t_complete_j2",
+        "p_wip_capacity"
+      ],
+      [
+        "t_fault_j1_op1_m1_cfg1",
+        "p1_op1_fault_m1_cfg1"
+      ],
+      [
+        "t_fault_j1_op1_m1_cfg2",
+        "p1_op1_fault_m1_cfg2"
+      ],
+      [
+        "t_fault_j1_op2_m2_cfg1",
+        "p1_op2_fault_m2_cfg1"
+      ],
+      [
+        "t_fault_j1_op2_m2_cfg2",
+        "p1_op2_fault_m2_cfg2"
+      ],
+      [
+        "t_fault_j2_op1_m3_cfg1",
+        "p2_op1_fault_m3_cfg1"
+      ],
+      [
+        "t_fault_j2_op1_m3_cfg2",
+        "p2_op1_fault_m3_cfg2"
+      ],
+      [
+        "t_fault_j2_op2_m1_cfg1",
+        "p2_op2_fault_m1_cfg1"
+      ],
+      [
+        "t_fault_j2_op2_m1_cfg2",
+        "p2_op2_fault_m1_cfg2"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p1_op1_end"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p_machine_1_cfg_1"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p1_op1_end"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p_machine_1_cfg_2"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p1_op2_end"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p_machine_2_cap"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p_machine_2_cfg_1"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p1_op2_end"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p_machine_2_cap"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p_machine_2_cfg_2"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p2_op1_end"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p_machine_3_cap"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p_machine_3_cfg_1"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p2_op1_end"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p_machine_3_cap"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p_machine_3_cfg_2"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p2_op2_end"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p_machine_1_cfg_1"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p2_op2_end"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p_machine_1_cfg_2"
+      ],
+      [
+        "t_recov_j1_op1_m1_cfg1",
+        "p1_op1_at_m1_cfg1"
+      ],
+      [
+        "t_recov_j1_op1_m1_cfg2",
+        "p1_op1_at_m1_cfg2"
+      ],
+      [
+        "t_recov_j1_op2_m2_cfg1",
+        "p1_op2_at_m2_cfg1"
+      ],
+      [
+        "t_recov_j1_op2_m2_cfg2",
+        "p1_op2_at_m2_cfg2"
+      ],
+      [
+        "t_recov_j2_op1_m3_cfg1",
+        "p2_op1_at_m3_cfg1"
+      ],
+      [
+        "t_recov_j2_op1_m3_cfg2",
+        "p2_op1_at_m3_cfg2"
+      ],
+      [
+        "t_recov_j2_op2_m1_cfg1",
+        "p2_op2_at_m1_cfg1"
+      ],
+      [
+        "t_recov_j2_op2_m1_cfg2",
+        "p2_op2_at_m1_cfg2"
+      ],
+      [
+        "t_release_j1",
+        "p1_op1_start"
+      ],
+      [
+        "t_release_j2",
+        "p2_op1_start"
+      ],
+      [
+        "t_task_done",
+        "task_done_place"
+      ],
+      [
+        "t_trans_j1_op1_m1_cfg1",
+        "p1_op1_at_m1_cfg1"
+      ],
+      [
+        "t_trans_j1_op1_m1_cfg2",
+        "p1_op1_at_m1_cfg2"
+      ],
+      [
+        "t_trans_j1_op2_m2_cfg1",
+        "p1_op2_at_m2_cfg1"
+      ],
+      [
+        "t_trans_j1_op2_m2_cfg2",
+        "p1_op2_at_m2_cfg2"
+      ],
+      [
+        "t_trans_j2_op1_m3_cfg1",
+        "p2_op1_at_m3_cfg1"
+      ],
+      [
+        "t_trans_j2_op1_m3_cfg2",
+        "p2_op1_at_m3_cfg2"
+      ],
+      [
+        "t_trans_j2_op2_m1_cfg1",
+        "p2_op2_at_m1_cfg1"
+      ],
+      [
+        "t_trans_j2_op2_m1_cfg2",
+        "p2_op2_at_m1_cfg2"
+      ]
+    ],
+    "initial_marking": {
+      "p1_ready": 1,
+      "p2_ready": 1,
+      "p_machine_1_cap": 1,
+      "p_machine_1_cfg_1": 1,
+      "p_machine_1_cfg_2": 0,
+      "p_machine_2_cap": 1,
+      "p_machine_2_cfg_1": 1,
+      "p_machine_2_cfg_2": 0,
+      "p_machine_3_cap": 1,
+      "p_machine_3_cfg_1": 1,
+      "p_machine_3_cfg_2": 0,
+      "p_wip_capacity": 2
+    },
+    "completion_markings": [
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      }
+    ]
+  },
+  "candidate_model": {
+    "places": [
+      "p1_done",
+      "p1_op1_at_m1_cfg1",
+      "p1_op1_at_m1_cfg2",
+      "p1_op1_end",
+      "p1_op1_fault_m1_cfg1",
+      "p1_op1_fault_m1_cfg2",
+      "p1_op1_start",
+      "p1_op2_at_m2_cfg1",
+      "p1_op2_at_m2_cfg2",
+      "p1_op2_end",
+      "p1_op2_fault_m2_cfg1",
+      "p1_op2_fault_m2_cfg2",
+      "p1_op2_start",
+      "p1_ready",
+      "p2_done",
+      "p2_op1_at_m3_cfg1",
+      "p2_op1_at_m3_cfg2",
+      "p2_op1_end",
+      "p2_op1_fault_m3_cfg1",
+      "p2_op1_fault_m3_cfg2",
+      "p2_op1_start",
+      "p2_op2_at_m1_cfg1",
+      "p2_op2_at_m1_cfg2",
+      "p2_op2_end",
+      "p2_op2_fault_m1_cfg1",
+      "p2_op2_fault_m1_cfg2",
+      "p2_op2_start",
+      "p2_ready",
+      "p_machine_1_cap",
+      "p_machine_1_cfg_1",
+      "p_machine_1_cfg_2",
+      "p_machine_2_cap",
+      "p_machine_2_cfg_1",
+      "p_machine_2_cfg_2",
+      "p_machine_3_cap",
+      "p_machine_3_cfg_1",
+      "p_machine_3_cfg_2",
+      "p_wip_capacity",
+      "task_done_place"
+    ],
+    "transitions": {
+      "t_chain_j1_op1_to_op2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_chain_j2_op1_to_op2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_complete_j1": {
+        "label": "complete_j1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_complete_j2": {
+        "label": "complete_j2",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_fault_j1_op1_m1_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op1_m1_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op1_m3_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op1_m3_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op2_m1_cfg1": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_fault_j2_op2_m1_cfg2": {
+        "label": "",
+        "is_fault": true,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "5"
+        ]
+      },
+      "t_proc_j1_op1_m1_cfg1": {
+        "label": "proc_j1_op1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j1_op1_m1_cfg2": {
+        "label": "proc_j1_op1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j1_op2_m2_cfg1": {
+        "label": "proc_j1_op2_m2",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3/2"
+        ]
+      },
+      "t_proc_j1_op2_m2_cfg2": {
+        "label": "proc_j1_op2_m2",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j2_op1_m3_cfg1": {
+        "label": "proc_j2_op1_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j2_op1_m3_cfg2": {
+        "label": "proc_j2_op1_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_proc_j2_op2_m1_cfg1": {
+        "label": "proc_j2_op2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_proc_j2_op2_m1_cfg2": {
+        "label": "proc_j2_op2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "2",
+          "4"
+        ]
+      },
+      "t_recov_j1_op1_m1_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j1_op1_m1_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "55/16",
+          "5"
+        ]
+      },
+      "t_recov_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op1_m3_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op1_m3_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op2_m1_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_recov_j2_op2_m1_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": true,
+        "interval": [
+          "1",
+          "3"
+        ]
+      },
+      "t_release_j1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_release_j2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_task_done": {
+        "label": "task_done",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "0",
+          "0"
+        ]
+      },
+      "t_trans_j1_op1_m1_cfg1": {
+        "label": "transfer_j1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op1_m1_cfg2": {
+        "label": "transfer_j1_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op2_m2_cfg1": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j1_op2_m2_cfg2": {
+        "label": "",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op1_m3_cfg1": {
+        "label": "transfer_j2_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op1_m3_cfg2": {
+        "label": "transfer_j2_m3",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op2_m1_cfg1": {
+        "label": "transfer_j2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      },
+      "t_trans_j2_op2_m1_cfg2": {
+        "label": "transfer_j2_m1",
+        "is_fault": false,
+        "is_adjustable": false,
+        "interval": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    "arcs": [
+      [
+        "p1_done",
+        "t_task_done"
+      ],
+      [
+        "p1_op1_at_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_at_m1_cfg2",
+        "t_proc_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_end",
+        "t_chain_j1_op1_to_op2"
+      ],
+      [
+        "p1_op1_fault_m1_cfg1",
+        "t_recov_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_fault_m1_cfg2",
+        "t_recov_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_start",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_start",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op1_start",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p1_op1_start",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p1_op2_at_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_at_m2_cfg2",
+        "t_proc_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_end",
+        "t_complete_j1"
+      ],
+      [
+        "p1_op2_fault_m2_cfg1",
+        "t_recov_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_fault_m2_cfg2",
+        "t_recov_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_start",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_start",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_op2_start",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p1_op2_start",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p1_ready",
+        "t_release_j1"
+      ],
+      [
+        "p2_done",
+        "t_task_done"
+      ],
+      [
+        "p2_op1_at_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_at_m3_cfg2",
+        "t_proc_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_end",
+        "t_chain_j2_op1_to_op2"
+      ],
+      [
+        "p2_op1_fault_m3_cfg1",
+        "t_recov_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_fault_m3_cfg2",
+        "t_recov_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_start",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_start",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op1_start",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p2_op1_start",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p2_op2_at_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_at_m1_cfg2",
+        "t_proc_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_end",
+        "t_complete_j2"
+      ],
+      [
+        "p2_op2_fault_m1_cfg1",
+        "t_recov_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_fault_m1_cfg2",
+        "t_recov_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_start",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_start",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_op2_start",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p2_op2_start",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p2_ready",
+        "t_release_j2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cap",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_fault_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_fault_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_trans_j1_op1_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_1",
+        "t_trans_j2_op2_m1_cfg1"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_fault_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_fault_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_trans_j1_op1_m1_cfg2"
+      ],
+      [
+        "p_machine_1_cfg_2",
+        "t_trans_j2_op2_m1_cfg2"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cap",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cfg_1",
+        "t_fault_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cfg_1",
+        "t_trans_j1_op2_m2_cfg1"
+      ],
+      [
+        "p_machine_2_cfg_2",
+        "t_fault_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_2_cfg_2",
+        "t_trans_j1_op2_m2_cfg2"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cap",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cfg_1",
+        "t_fault_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cfg_1",
+        "t_trans_j2_op1_m3_cfg1"
+      ],
+      [
+        "p_machine_3_cfg_2",
+        "t_fault_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_machine_3_cfg_2",
+        "t_trans_j2_op1_m3_cfg2"
+      ],
+      [
+        "p_wip_capacity",
+        "t_release_j1"
+      ],
+      [
+        "p_wip_capacity",
+        "t_release_j2"
+      ],
+      [
+        "t_chain_j1_op1_to_op2",
+        "p1_op2_start"
+      ],
+      [
+        "t_chain_j2_op1_to_op2",
+        "p2_op2_start"
+      ],
+      [
+        "t_complete_j1",
+        "p1_done"
+      ],
+      [
+        "t_complete_j1",
+        "p_wip_capacity"
+      ],
+      [
+        "t_complete_j2",
+        "p2_done"
+      ],
+      [
+        "t_complete_j2",
+        "p_wip_capacity"
+      ],
+      [
+        "t_fault_j1_op1_m1_cfg1",
+        "p1_op1_fault_m1_cfg1"
+      ],
+      [
+        "t_fault_j1_op1_m1_cfg2",
+        "p1_op1_fault_m1_cfg2"
+      ],
+      [
+        "t_fault_j1_op2_m2_cfg1",
+        "p1_op2_fault_m2_cfg1"
+      ],
+      [
+        "t_fault_j1_op2_m2_cfg2",
+        "p1_op2_fault_m2_cfg2"
+      ],
+      [
+        "t_fault_j2_op1_m3_cfg1",
+        "p2_op1_fault_m3_cfg1"
+      ],
+      [
+        "t_fault_j2_op1_m3_cfg2",
+        "p2_op1_fault_m3_cfg2"
+      ],
+      [
+        "t_fault_j2_op2_m1_cfg1",
+        "p2_op2_fault_m1_cfg1"
+      ],
+      [
+        "t_fault_j2_op2_m1_cfg2",
+        "p2_op2_fault_m1_cfg2"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p1_op1_end"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg1",
+        "p_machine_1_cfg_1"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p1_op1_end"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j1_op1_m1_cfg2",
+        "p_machine_1_cfg_2"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p1_op2_end"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p_machine_2_cap"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg1",
+        "p_machine_2_cfg_1"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p1_op2_end"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p_machine_2_cap"
+      ],
+      [
+        "t_proc_j1_op2_m2_cfg2",
+        "p_machine_2_cfg_2"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p2_op1_end"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p_machine_3_cap"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg1",
+        "p_machine_3_cfg_1"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p2_op1_end"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p_machine_3_cap"
+      ],
+      [
+        "t_proc_j2_op1_m3_cfg2",
+        "p_machine_3_cfg_2"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p2_op2_end"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg1",
+        "p_machine_1_cfg_1"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p2_op2_end"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p_machine_1_cap"
+      ],
+      [
+        "t_proc_j2_op2_m1_cfg2",
+        "p_machine_1_cfg_2"
+      ],
+      [
+        "t_recov_j1_op1_m1_cfg1",
+        "p1_op1_at_m1_cfg1"
+      ],
+      [
+        "t_recov_j1_op1_m1_cfg2",
+        "p1_op1_at_m1_cfg2"
+      ],
+      [
+        "t_recov_j1_op2_m2_cfg1",
+        "p1_op2_at_m2_cfg1"
+      ],
+      [
+        "t_recov_j1_op2_m2_cfg2",
+        "p1_op2_at_m2_cfg2"
+      ],
+      [
+        "t_recov_j2_op1_m3_cfg1",
+        "p2_op1_at_m3_cfg1"
+      ],
+      [
+        "t_recov_j2_op1_m3_cfg2",
+        "p2_op1_at_m3_cfg2"
+      ],
+      [
+        "t_recov_j2_op2_m1_cfg1",
+        "p2_op2_at_m1_cfg1"
+      ],
+      [
+        "t_recov_j2_op2_m1_cfg2",
+        "p2_op2_at_m1_cfg2"
+      ],
+      [
+        "t_release_j1",
+        "p1_op1_start"
+      ],
+      [
+        "t_release_j2",
+        "p2_op1_start"
+      ],
+      [
+        "t_task_done",
+        "task_done_place"
+      ],
+      [
+        "t_trans_j1_op1_m1_cfg1",
+        "p1_op1_at_m1_cfg1"
+      ],
+      [
+        "t_trans_j1_op1_m1_cfg2",
+        "p1_op1_at_m1_cfg2"
+      ],
+      [
+        "t_trans_j1_op2_m2_cfg1",
+        "p1_op2_at_m2_cfg1"
+      ],
+      [
+        "t_trans_j1_op2_m2_cfg2",
+        "p1_op2_at_m2_cfg2"
+      ],
+      [
+        "t_trans_j2_op1_m3_cfg1",
+        "p2_op1_at_m3_cfg1"
+      ],
+      [
+        "t_trans_j2_op1_m3_cfg2",
+        "p2_op1_at_m3_cfg2"
+      ],
+      [
+        "t_trans_j2_op2_m1_cfg1",
+        "p2_op2_at_m1_cfg1"
+      ],
+      [
+        "t_trans_j2_op2_m1_cfg2",
+        "p2_op2_at_m1_cfg2"
+      ]
+    ],
+    "initial_marking": {
+      "p1_ready": 1,
+      "p2_ready": 1,
+      "p_machine_1_cap": 1,
+      "p_machine_1_cfg_1": 1,
+      "p_machine_1_cfg_2": 0,
+      "p_machine_2_cap": 1,
+      "p_machine_2_cfg_1": 1,
+      "p_machine_2_cfg_2": 0,
+      "p_machine_3_cap": 1,
+      "p_machine_3_cfg_1": 1,
+      "p_machine_3_cfg_2": 0,
+      "p_wip_capacity": 2
+    },
+    "completion_markings": [
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_1": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_1": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_1": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      },
+      {
+        "p_machine_1_cap": 1,
+        "p_machine_1_cfg_2": 1,
+        "p_machine_2_cap": 1,
+        "p_machine_2_cfg_2": 1,
+        "p_machine_3_cap": 1,
+        "p_machine_3_cfg_2": 1,
+        "p_wip_capacity": 2,
+        "task_done_place": 1
+      }
+    ]
+  },
+  "initial_verdict": "AMB",
+  "initial_certificates": 14144,
+  "reference": {
+    "regime": "sampled",
+    "normal_words": [
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j1_op2_m2_cfg1",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_complete_j2",
+        "t_task_done"
+      ],
+      [
+        "t_release_j1",
+        "t_release_j2",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j1_op2_m2_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_task_done"
+      ],
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_trans_j1_op2_m2_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j2",
+        "t_complete_j1",
+        "t_task_done"
+      ]
+    ],
+    "fault_words": [
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_task_done"
+      ],
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_complete_j1",
+        "t_task_done"
+      ],
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_chain_j2_op1_to_op2",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_complete_j2",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_task_done"
+      ]
+    ],
+    "normal_available": 592,
+    "fault_available": 804
+  },
+  "original_frozen_record": {
+    "evaluation_id": "fs_m3_j2_k2_w2_ur30_fl4_wf10_ar10_s11",
+    "method": "cpgld",
+    "status": "VERIFIED_SUCCESS",
+    "L": "10",
+    "H": "36.0",
+    "adjustable_ratio": "0.1",
+    "initial_model_hash": "1ec25caf5d334610",
+    "repair_problem_hash": "bf278185f1fbf078",
+    "n_adjustable_transitions": "10",
+    "representable_assignment_count": "3515625",
+    "runtime_seconds": "1510.9084",
+    "iterations": "3",
+    "candidate_evaluations": "0",
+    "verifier_calls": "45",
+    "LP_calls": "274144",
+    "initial_critical_pair_count": "14144",
+    "final_critical_pair_count": "0",
+    "modified_transition_count": "2",
+    "CI": "4.937500",
+    "W": "19408.000000",
+    "final_model_hash": "75f5b4f62a09b248",
+    "task_predicate_pass": "True",
+    "fresh_reverification_verdict": "VER",
+    "timeout_seconds": "NA",
+    "timeout_phase": "NA",
+    "error_type": "NA",
+    "solve_status": "NA",
+    "backend_status": "SUCCESS",
+    "n_machines": "3",
+    "n_parts": "2",
+    "ops_per_part": "2",
+    "wip_bound": "2",
+    "unobservable_ratio": "0.3",
+    "fault_locations": "4",
+    "interval_width_factor": "1.0",
+    "seed": "11",
+    "family": "rmt_fms"
+  },
+  "reconstruction": {
+    "candidate_model_hash": "75f5b4f62a09b248",
+    "fresh_verdict": "VER",
+    "fresh_certificates": 0,
+    "fresh_certificate_mode": "COMPLETE_SET",
+    "fresh_enumeration_complete": true,
+    "interval_changes": {
+      "t_recov_j1_op2_m2_cfg1": {
+        "before": [
+          "1",
+          "3"
+        ],
+        "after": [
+          "55/16",
+          "5"
+        ],
+        "is_fault": false
+      },
+      "t_proc_j1_op2_m2_cfg1": {
+        "before": [
+          "1",
+          "2"
+        ],
+        "after": [
+          "1",
+          "3/2"
+        ],
+        "is_fault": false
+      }
+    },
+    "CI": "79/16",
+    "modified_transition_count": 2,
+    "expected_final_model_hash": "75f5b4f62a09b248",
+    "hash_match": true
+  },
+  "predicate": {
+    "path_pass": false,
+    "lost_normal": [
+      [
+        "t_release_j1",
+        "t_release_j2",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j1_op2_m2_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_task_done"
+      ]
+    ],
+    "lost_fault": [
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_task_done"
+      ],
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j2_op1_to_op2",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_complete_j2",
+        "t_complete_j1",
+        "t_task_done"
+      ],
+      [
+        "t_release_j2",
+        "t_release_j1",
+        "t_trans_j2_op1_m3_cfg1",
+        "t_trans_j1_op1_m1_cfg1",
+        "t_proc_j1_op1_m1_cfg1",
+        "t_proc_j2_op1_m3_cfg1",
+        "t_chain_j1_op1_to_op2",
+        "t_chain_j2_op1_to_op2",
+        "t_trans_j2_op2_m1_cfg1",
+        "t_fault_j1_op2_m2_cfg1",
+        "t_proc_j2_op2_m1_cfg1",
+        "t_recov_j1_op2_m2_cfg1",
+        "t_complete_j2",
+        "t_proc_j1_op2_m2_cfg1",
+        "t_complete_j1",
+        "t_task_done"
+      ]
+    ],
+    "undetermined": [],
+    "perf_tiers": {
+      "0": true,
+      "5": true,
+      "10": true
+    },
+    "psi_pass": {
+      "0": false,
+      "5": false,
+      "10": false
+    },
+    "normal_rows": [
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        "status": "RETAINED",
+        "t_min": "4",
+        "t_min_base": "4",
+        "delta": "0",
+        "tier_0": true,
+        "tier_5": true,
+        "tier_10": true
+      },
+      {
+        "word": [
+          "t_release_j1",
+          "t_release_j2",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      },
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "RETAINED",
+        "t_min": "5",
+        "t_min_base": "5",
+        "delta": "0",
+        "tier_0": true,
+        "tier_5": true,
+        "tier_10": true
+      }
+    ],
+    "fault_rows": [
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      },
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      },
+      {
+        "word": [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        "status": "LOST"
+      }
+    ]
+  },
+  "baseline_completion_intervals": {
+    "normal": [
+      [
+        [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      [
+        [
+          "t_release_j1",
+          "t_release_j2",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        [
+          "5",
+          "6"
+        ]
+      ],
+      [
+        [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_trans_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        [
+          "5",
+          "8"
+        ]
+      ]
+    ],
+    "fault": [
+      [
+        [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_task_done"
+        ],
+        [
+          "7",
+          "8"
+        ]
+      ],
+      [
+        [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j2_op1_to_op2",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_complete_j2",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        [
+          "6",
+          "8"
+        ]
+      ],
+      [
+        [
+          "t_release_j2",
+          "t_release_j1",
+          "t_trans_j2_op1_m3_cfg1",
+          "t_trans_j1_op1_m1_cfg1",
+          "t_proc_j1_op1_m1_cfg1",
+          "t_proc_j2_op1_m3_cfg1",
+          "t_chain_j1_op1_to_op2",
+          "t_chain_j2_op1_to_op2",
+          "t_trans_j2_op2_m1_cfg1",
+          "t_fault_j1_op2_m2_cfg1",
+          "t_proc_j2_op2_m1_cfg1",
+          "t_recov_j1_op2_m2_cfg1",
+          "t_complete_j2",
+          "t_proc_j1_op2_m2_cfg1",
+          "t_complete_j1",
+          "t_task_done"
+        ],
+        [
+          "6",
+          "10"
+        ]
+      ]
+    ],
+    "undetermined": []
+  },
+  "numeric_status_for_lost_words": {
+    "normal:t_release_j1,t_release_j2,t_trans_j1_op1_m1_cfg1,t_trans_j2_op1_m3_cfg1,t_proc_j1_op1_m1_cfg1,t_chain_j1_op1_to_op2,t_trans_j1_op2_m2_cfg1,t_proc_j2_op1_m3_cfg1,t_chain_j2_op1_to_op2,t_trans_j2_op2_m1_cfg1,t_proc_j2_op2_m1_cfg1,t_complete_j2,t_proc_j1_op2_m2_cfg1,t_complete_j1,t_task_done": {
+      "min_status": "INFEASIBLE",
+      "max_status": "INFEASIBLE",
+      "min_value": null,
+      "max_value": null
+    },
+    "fault:t_release_j2,t_release_j1,t_trans_j1_op1_m1_cfg1,t_proc_j1_op1_m1_cfg1,t_chain_j1_op1_to_op2,t_trans_j2_op1_m3_cfg1,t_proc_j2_op1_m3_cfg1,t_fault_j1_op2_m2_cfg1,t_chain_j2_op1_to_op2,t_recov_j1_op2_m2_cfg1,t_proc_j1_op2_m2_cfg1,t_complete_j1,t_trans_j2_op2_m1_cfg1,t_proc_j2_op2_m1_cfg1,t_complete_j2,t_task_done": {
+      "min_status": "INFEASIBLE",
+      "max_status": "INFEASIBLE",
+      "min_value": null,
+      "max_value": null
+    },
+    "fault:t_release_j2,t_release_j1,t_trans_j1_op1_m1_cfg1,t_proc_j1_op1_m1_cfg1,t_chain_j1_op1_to_op2,t_trans_j2_op1_m3_cfg1,t_proc_j2_op1_m3_cfg1,t_chain_j2_op1_to_op2,t_fault_j1_op2_m2_cfg1,t_trans_j2_op2_m1_cfg1,t_recov_j1_op2_m2_cfg1,t_proc_j1_op2_m2_cfg1,t_proc_j2_op2_m1_cfg1,t_complete_j2,t_complete_j1,t_task_done": {
+      "min_status": "INFEASIBLE",
+      "max_status": "INFEASIBLE",
+      "min_value": null,
+      "max_value": null
+    },
+    "fault:t_release_j2,t_release_j1,t_trans_j2_op1_m3_cfg1,t_trans_j1_op1_m1_cfg1,t_proc_j1_op1_m1_cfg1,t_proc_j2_op1_m3_cfg1,t_chain_j1_op1_to_op2,t_chain_j2_op1_to_op2,t_trans_j2_op2_m1_cfg1,t_fault_j1_op2_m2_cfg1,t_proc_j2_op2_m1_cfg1,t_recov_j1_op2_m2_cfg1,t_complete_j2,t_proc_j1_op2_m2_cfg1,t_complete_j1,t_task_done": {
+      "min_status": "INFEASIBLE",
+      "max_status": "INFEASIBLE",
+      "min_value": null,
+      "max_value": null
+    }
+  },
+  "provenance": {
+    "source": "experiments/08_task_preservation/code/frozen_src (read-only)",
+    "runner": "results/writing_readiness_audit/scripts/reconstruct_case.py",
+    "solver": "scipy.optimize.linprog (HiGHS) floating-point LP; Fraction display only"
+  }
+}

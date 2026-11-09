@@ -1,0 +1,43 @@
+{
+  "audit_schema": "writing-readiness-audit-1",
+  "pilot_execution": {
+    "commit": "a0d1553",
+    "github_actions_run_id": "42475575928",
+    "workflow": "r3_2_phaseA_pilot.yml",
+    "platform": "ubuntu-22.04",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.16.2"
+  },
+  "pilot_delivery_commit": "64ebb3b",
+  "phase2_delivery_commit": "39ab405",
+  "writing_audit_commit": null,
+  "frozen_inputs": {
+    "population_sha256": "7b0a150437d285310bafb0e1de36fc60c651ab4c2bed7951896293edbb6fde63",
+    "pilot_manifest_sha256": "822b3e34458dde78460c516e1d6ce79e92e21c97cf3f3cbf0bdb760c7cf99192",
+    "cpgld_results_sha256": "fb552fb68afee957bc94c91f8d6ed5be2dc6ab15f1744b6704a19b5d60d865c2",
+    "coquand_results_sha256": "504805860675cd1a8b23a7d9e4eba10506a67f848aca382bcd0db4d7763735f5",
+    "exhaustive_results_sha256": "6baad2a53259b96541a23e15f92f543fc1e1c6f08a5a45b7b39fe1a14b83380e",
+    "frozen_source_manifest_sha256": "9701f3407479c8ea0297aa714c4698b91a22de72afa023cee2ca342370ade49b",
+    "pilot_records_tree_sha256": "45b2891254022af923d4fe49093a89b6224d02c00a9e22ff97790431ff5f2d3d"
+  },
+  "manuscript_read_only": {
+    "main_modified_v26.tex": "7d57d25e7371d4791a5fe06c3edd637313929e3052813107d8c39e8c413e3202",
+    "supplementary_material_modified_v26.tex": "7076566893fce8270e637ecc2ff58c8da1ae3c93b85248481698a11724a3c6b2",
+    "references_v26.bib": "e6557358fd803ca13094ad7f0285f02977fa5194ffc09ed2b841e3624356fd63"
+  },
+  "audit_platform": "Darwin-25.2.0-arm64-arm-64bit-Mach-O",
+  "audit_python": "3.14.4",
+  "targeted_lp_environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.16.2"
+  },
+  "notes": [
+    "Execution and delivery commits differ only in workflow/results as documented; frozen algorithm source was unchanged.",
+    "The writing audit adds independent recomputation and certificates, not new formal adjustment results.",
+    "Raw pilot records are unchanged; earlier summaries are not overwritten.",
+    "The final repository delivery commit is recorded in the package-level DELIVERY_METADATA.json; audit file hashes are self-contained in MANIFEST.sha256."
+  ],
+  "writing_audit_version": "writing-readiness-audit-1"
+}

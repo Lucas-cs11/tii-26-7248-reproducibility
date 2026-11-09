@@ -1,0 +1,248 @@
+{
+  "PASS": true,
+  "checks": [
+    {
+      "check": "recompute_statistics.py_exit_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "build_auxiliary_tables.py_exit_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "analyze_performance.py_exit_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "record_count_identity",
+      "pass": true,
+      "detail": "{'records': 5826, 'unique_evaluation_method': 5826, 'unique_evaluations': 1942, 'pilot_evaluations': 1942, 'population_evaluations': 16038, 'population_sha256': '7b0a150437d285310bafb0e1de36fc60c651ab4c2bed7951896293edbb6fde63', 'pilot_manifest_sha256': '822b3e34458dde78460c516e1d6ce79e92e21c97cf3f3cbf0bdb760c7cf99192', 'duplicates': 0}"
+    },
+    {
+      "check": "unique_records",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_fresh_successes_sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_path_pass_sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_psi0_sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_psi5_sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_psi10_sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fresh_cohort_partition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "paired_common_original_subset",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "paired_no_discordance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "final_csv_arithmetic",
+      "pass": true,
+      "detail": "112 rows; bad=[]"
+    },
+    {
+      "check": "flip_row_count",
+      "pass": true,
+      "detail": "120"
+    },
+    {
+      "check": "flip_status_reconciliation",
+      "pass": true,
+      "detail": "{'NO_IMPROVING_CANDIDATE': 6, 'TIMEOUT': 111, 'FINITE_SEARCH_FAILURE': 3}"
+    },
+    {
+      "check": "decision_audit_coverage",
+      "pass": true,
+      "detail": "5826"
+    },
+    {
+      "check": "path_fail_lp_caveat_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_certificate_exists",
+      "pass": true,
+      "detail": "/private/tmp/paperhub/experiments/08_task_preservation/results/writing_readiness_audit/REPRESENTATIVE_EXACT_CERTIFICATES/fs_m2_j2_k4_w1_ur50_fl4_wf5_ar25_s1/certificate.json"
+    },
+    {
+      "check": "case2_certificate_exists",
+      "pass": true,
+      "detail": "/private/tmp/paperhub/experiments/08_task_preservation/results/writing_readiness_audit/REPRESENTATIVE_EXACT_CERTIFICATES/fs_m3_j1_k2_w2_ur50_fl1_wf15_ar50_s7/certificate.json"
+    },
+    {
+      "check": "case1_fresh_complete_ver",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_hash_match",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_complete_models",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case2_fresh_complete_ver",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case2_hash_match",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case2_complete_models",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_path_fails",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_direct_infeasible_statuses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case1_lost_words_originally_feasible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case2_all_predicates_pass",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case2_zero_normal_degradation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "alternative_pair_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "alternative_same_nominal_model",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "alternative_both_fresh_ver",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "alternative_predicate_discordance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "alternative_paths_retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case_1_rerun_files",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case_1_rerun_pass",
+      "pass": true,
+      "detail": "{'evaluation_id': 'fs_m3_j2_k2_w2_ur30_fl4_wf10_ar10_s11', 'exit_code': 0, 'input_model_hash': '1ec25caf5d334610', 'actual_wall_s': 711.89, 'fresh_verdict': 'VER', 'fresh_certificates': 0, 'frozen_final_model_hash': '75f5b4f62a09b248', 'rerun_final_model_hash': '75f5b4f62a09b248', 'hash_match': True, 'frozen_modified_transition_count': 2, 'rerun_modified_transition_count': 2, 'modified_count_match': True, 'frozen_CI': 4.9375, 'rerun_CI': 4.9375, 'CI_match_with_tolerance_1e-9': True, 'task_path_pass': False, 'task_psi_pass': {'0': False, '5': False, '10': False}, 'note': 'The original invocation used placeholder expected CI/modified fields; this independent validation compares actual rerun values against the frozen CSV.', 'PASS': True}"
+    },
+    {
+      "check": "case_2_rerun_files",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "case_2_rerun_pass",
+      "pass": true,
+      "detail": "{'evaluation_id': 'fs_m4_j2_k2_w2_ur30_fl2_wf15_ar25_s1', 'exit_code': 0, 'input_model_hash': 'ef5c987efadbc4e8', 'actual_wall_s': 477.37, 'fresh_verdict': 'VER', 'fresh_certificates': 0, 'frozen_final_model_hash': '39962c0cdb2fb439', 'rerun_final_model_hash': '39962c0cdb2fb439', 'hash_match': True, 'frozen_modified_transition_count': 2, 'rerun_modified_transition_count': 2, 'modified_count_match': True, 'frozen_CI': 6.3125, 'rerun_CI': 6.3125, 'CI_match_with_tolerance_1e-9': True, 'task_path_pass': False, 'task_psi_pass': {'0': False, '5': False, '10': False}, 'note': 'The original invocation used placeholder expected CI/modified fields; this independent validation compares actual rerun values against the frozen CSV.', 'PASS': True}"
+    },
+    {
+      "check": "coquand_validation_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "coquand_current_runners_agree",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "coquand_unresolved_not_hidden",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_personal_absolute_paths",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "manifest_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "manifest_no_malformed",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "manifest_complete",
+      "pass": true,
+      "detail": "{'missing': [], 'extra': []}"
+    },
+    {
+      "check": "manifest_hashes",
+      "pass": true,
+      "detail": "[]"
+    }
+  ],
+  "records": 5826,
+  "primary_cohort_n": 3060,
+  "all_fresh_success_n": 3181
+}

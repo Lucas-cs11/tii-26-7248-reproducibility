@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+import csv,gzip,json
+from pathlib import Path
+EXP=Path(__file__).resolve().parents[3]
+OUT=EXP/'results/writing_readiness_audit'
+DATA=EXP/'data/frozen'
+METHODS=('cpgld','coquand','exhaustive')
+stats=json.loads((OUT/'statistics.json').read_text())
+records=[json.loads(line) for path in sorted((EXP/'results/pilot_full').glob('shard_*.jsonl'))
+         for line in path.read_text().splitlines() if line.strip()]
+original={}
+for method in METHODS:
+    with gzip.open(DATA/f'full_adjustment_{method}.csv.gz','rt') as handle:
+        for row in csv.DictReader(handle): original[(row['evaluation_id'],method)]=row
+
+def rate(n,d): return f'{100*n/d:.4f}%' if d else ''
+def row(scope,method,regime,entry):
+    n=entry['n']
+    return [scope,method,regime,n,entry['path_pass'],rate(entry['path_pass'],n),
+            entry['psi0'],rate(entry['psi0'],n),entry['psi5'],rate(entry['psi5'],n),
+            entry['psi10'],rate(entry['psi10'],n)]
+
+with (OUT/'REFERENCE_PATH_COVERAGE.csv').open('w',newline='') as handle:
+    w=csv.writer(handle); w.writerow(['scope','method','reference_regime','fresh_successes','path_pass','path_rate',
+        'psi0','psi0_rate','psi5','psi5_rate','psi10','psi10_rate'])
+    for method in METHODS:
+        entry=stats['methods'][method]
+        for regime in ('full','sampled'):
+            sub={'n':entry[f'{regime}_n'],'path_pass':entry[f'{regime}_path_pass'],
+                 'psi0':entry[f'{regime}_psi0'],'psi5':entry[f'{regime}_path_pass'],
+                 'psi10':entry[f'{regime}_psi10']}
+            # psi5 is not stored per method/regime in the first statistics version;
+            # derive it directly below from raw records.
+            rr=[r for r in records if r['method']==method and r.get('fresh_success') and 'predicate' in r
+                and r.get('reference',{}).get('regime')==regime]
+            sub['psi5']=sum(r['predicate']['psi_pass'].get('5',False) for r in rr)
+            w.writerow(row('method',method,regime,sub))
+    for regime in ('full','sampled'):
+        w.writerow(row('all','ALL',regime,stats['path_regimes'][regime]))
+
+with (OUT/'DECISION_STATUS_AUDIT.csv').open('w',newline='') as handle:
+    w=csv.writer(handle); w.writerow(['evaluation_id','method','original_status','pilot_status','fresh_success',
+        'reference_regime','path_pass','lost_normal_words','lost_fault_words','baseline_undetermined',
+        'lp_decision_interpretation'])
+    for r in sorted(records,key=lambda x:(x['evaluation_id'],x['method'])):
+        orig=original[(r['evaluation_id'],r['method'])]['status']
+        p=r.get('predicate')
+        if not r.get('fresh_success'):
+            interp='NO_PREDICATE_EVALUATION'
+        elif p['path_pass']:
+            interp='SOLVER_FEASIBLE_FOR_ALL_CHECKED_WORDS'
+        else:
+            interp='NONE_STATUS_CONFLATES_INFEASIBLE_AND_NUMERICAL_UNKNOWN'
+        w.writerow([r['evaluation_id'],r['method'],orig,r.get('status'),r.get('fresh_success'),
+            r.get('reference',{}).get('regime',''),p.get('path_pass') if p else '',
+            p.get('lost_normal') if p else '',p.get('lost_fault') if p else '',
+            p.get('undetermined') if p else '',interp])
+
+with (OUT/'OUTCOME_FLIP_FINAL_CLASSIFICATION.csv').open('w',newline='') as handle:
+    w=csv.writer(handle); w.writerow(['evaluation_id','method','original_status','original_runtime_s',
+        'original_timeout_s','pilot_status','pilot_wall_s','fresh_verdict','fresh_certificates',
+        'path_pass','psi0','classification','comparability','evidence_limit'])
+    for r in sorted(records,key=lambda x:(x['method'],x['evaluation_id'])):
+        o=original[(r['evaluation_id'],r['method'])]
+        if o['status']=='VERIFIED_SUCCESS' or not r.get('fresh_success'): continue
+        if o['status']=='TIMEOUT':
+            cls='BUDGET_OR_TERMINATION_CONDITION_DIFFERENCE'
+            comp='NOT_DIRECTLY_COMPARABLE_TO_TIMED_ORIGINAL'
+            lim='Original stage timeout removed in pilot; OS/solver contribution not separately isolated.'
+        else:
+            cls='PROTOCOL_AND_PLATFORM_PATH_DIFFERENCE_UNRESOLVED'
+            comp='NOT_DIRECTLY_COMPARABLE_TO_TIMED_ORIGINAL'
+            lim='No unique cause established; original runtime exceeded nominal 300 s while alarm delivery was delayed; LP/platform/search-path differences remain possible.'
+        p=r.get('predicate',{})
+        w.writerow([r['evaluation_id'],r['method'],o['status'],o['runtime_seconds'],o.get('timeout_seconds','NA'),
+            r.get('status'),r.get('wall_s'),r.get('reconstruction',{}).get('fresh_verdict'),
+            r.get('reconstruction',{}).get('fresh_certs'),p.get('path_pass'),p.get('psi_pass',{}).get('0'),
+            cls,comp,lim])
+
+# Human-readable statistics generated from the same machine-readable statistics file.
+m=stats['methods']; a=stats['all']; c=stats['cohorts']; paired=stats['paired']
+lines=[]
+lines += ['# Statistical recomputation report','',
+'All values in this report were generated by `scripts/recompute_statistics.py` from the 80 raw JSONL files. No rate is hard-coded. Percentages below are solver-check outcomes, not exact-rational proofs.','',
+'## Record accounting','',
+f"- Population: {stats['coverage']['population_evaluations']} evaluations; frozen pilot: {stats['coverage']['pilot_evaluations']}.",
+f"- Records: {stats['coverage']['records']} = {stats['coverage']['unique_evaluations']} evaluations × 3 methods; duplicate evaluation–method pairs: {stats['coverage']['duplicates']}.",
+f"- Originally successful in this pilot: {sum(m[x]['expected_original_successes'] for x in METHODS)}; exactly reconstructed: {sum(m[x]['exact_reconstructions'] for x in METHODS)}; one Coquand model discrepancy; two original successes were compute-limited in the pilot and subsequently reconstructed by targeted reruns.",
+f"- Fresh VER successes: {a['fresh_successes']} = {c['original_success_again']['n']} original successes repeated + {c['flips']['n']} flips from other original outcomes.",
+f"- Other records: 2,307 no-candidate outcomes and {stats['unresolved']['infra_timeout_or_error']} compute-limited records. These are not mathematical infeasibility results.",'',
+'## A. Full fresh-success cohort (primary denominator requested for the raw pilot)','',
+'| Method | fresh VER | path pass | 0% | 5% | 10% |','|---|---:|---:|---:|---:|---:|']
+for method in METHODS:
+    e=m[method]; n=e['predicate_checked']
+    lines.append(f"| {method} | {n} | {e['path_pass']} ({rate(e['path_pass'],n)}) | {e['psi0']} ({rate(e['psi0'],n)}) | {e['psi5']} ({rate(e['psi5'],n)}) | {e['psi10']} ({rate(e['psi10'],n)}) |")
+n=a['fresh_successes']; lines.append(f"| ALL | {n} | {a['path_pass']} ({rate(a['path_pass'],n)}) | {a['psi0']} ({rate(a['psi0'],n)}) | {a['psi5']} ({rate(a['psi5'],n)}) | {a['psi10']} ({rate(a['psi10'],n)}) |")
+lines += ['', '## B. Original-success, exactly reconstructed cohort (recommended for statements about the original adjustments)','',
+'| Method | n | path pass | 0% | 5% | 10% |','|---|---:|---:|---:|---:|---:|']
+for method in METHODS:
+    e=c['exact_reconstruction']['by_method'][method]; n=e['n']
+    lines.append(f"| {method} | {n} | {e['path_pass']} ({rate(e['path_pass'],n)}) | {e['psi0']} ({rate(e['psi0'],n)}) | {e['psi5']} ({rate(e['psi5'],n)}) | {e['psi10']} ({rate(e['psi10'],n)}) |")
+e=c['exact_reconstruction']; n=e['n']; lines.append(f"| ALL | {n} | {e['path_pass']} ({rate(e['path_pass'],n)}) | {e['psi0']} ({rate(e['psi0'],n)}) | {e['psi5']} ({rate(e['psi5'],n)}) | {e['psi10']} ({rate(e['psi10'],n)}) |")
+e=c['original_success_again']; n=e['n']
+lines += ['',f"The broader original-success-again cohort contains {n} records (including the one Coquand discrepancy): path {e['path_pass']}/{n} ({rate(e['path_pass'],n)}), 0% {e['psi0']}/{n} ({rate(e['psi0'],n)}), 5% {e['psi5']}/{n} ({rate(e['psi5'],n)}), 10% {e['psi10']}/{n} ({rate(e['psi10'],n)}).",'',
+'## C. Joint success and preservation on all attempts','',
+'| Method | attempts | fresh VER | path pass | 0% | 10% |','|---|---:|---:|---:|---:|---:|']
+for method in METHODS:
+    e=m[method]; n=e['attempts']
+    lines.append(f"| {method} | {n} | {e['fresh_successes']} ({rate(e['fresh_successes'],n)}) | {e['path_pass']} ({rate(e['path_pass'],n)}) | {e['psi0']} ({rate(e['psi0'],n)}) | {e['psi10']} ({rate(e['psi10'],n)}) |")
+lines += ['', '## D. Reference-set regimes','',
+'| Regime | n | path pass | 0% | 5% | 10% |','|---|---:|---:|---:|---:|---:|']
+for regime in ('full','sampled'):
+    e=stats['path_regimes'][regime]; n=e['n']
+    lines.append(f"| {regime} | {n} | {e['path_pass']} ({rate(e['path_pass'],n)}) | {e['psi0']} ({rate(e['psi0'],n)}) | {e['psi5']} ({rate(e['psi5'],n)}) | {e['psi10']} ({rate(e['psi10'],n)}) |")
+lines += ['', 'Full means all distinct normal/fault words appearing in the complete certificate enumeration when both class counts are at most 32. It does not mean all complete executions in CompRuns(N0). Sampled means three deterministic words per class when either class has more than 32 distinct words.','',
+'## E. Paired cohorts','',
+f"- Three-method fresh-success intersection: {paired['common_evaluations']} evaluations; each method: path {paired['methods']['cpgld']['path_pass']}/{paired['common_evaluations']}, 0% {paired['methods']['cpgld']['psi0']}/{paired['common_evaluations']}. Per-instance discordance across methods: {paired['discordant_fresh_common']}.",
+f"- Three-method original-success intersection: {paired['common_original_success_evaluations']} evaluations; each method: path {paired['original_success_methods']['cpgld']['path_pass']}/{paired['common_original_success_evaluations']}, 0% {paired['original_success_methods']['cpgld']['psi0']}/{paired['common_original_success_evaluations']}.",
+'These paired results describe only the intersection and must not replace method-specific success-set or attempt-denominator results.','',
+'## F. Loss counters','',
+f"Full fresh-success cohort: {a['lost_fault_cases']} cases with at least one lost fault word ({a['lost_fault_words']} words); {a['lost_normal_cases']} cases with at least one lost normal word ({a['lost_normal_words']} words). The 0 undetermined counter denotes missing baselines only; it does not certify zero numerical LP unknowns."]
+(OUT/'STATISTICAL_RECOMPUTATION_REPORT.md').write_text('\n'.join(lines)+'\n')
+print('wrote REFERENCE_PATH_COVERAGE.csv, DECISION_STATUS_AUDIT.csv, OUTCOME_FLIP_FINAL_CLASSIFICATION.csv, STATISTICAL_RECOMPUTATION_REPORT.md')

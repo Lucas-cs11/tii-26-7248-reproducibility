@@ -1,0 +1,9 @@
+scope,method,reference_regime,fresh_successes,path_pass,path_rate,psi0,psi0_rate,psi5,psi5_rate,psi10,psi10_rate
+method,cpgld,full,1595,1528,95.7994%,1017,63.7618%,1280,80.2508%,1528,95.7994%
+method,cpgld,sampled,259,105,40.5405%,73,28.1853%,98,37.8378%,105,40.5405%
+method,coquand,full,1011,1011,100.0000%,1011,100.0000%,1011,100.0000%,1011,100.0000%
+method,coquand,sampled,62,6,9.6774%,6,9.6774%,6,9.6774%,6,9.6774%
+method,exhaustive,full,216,216,100.0000%,216,100.0000%,216,100.0000%,216,100.0000%
+method,exhaustive,sampled,38,1,2.6316%,1,2.6316%,1,2.6316%,1,2.6316%
+all,ALL,full,2822,2755,97.6258%,2244,79.5181%,2507,88.8377%,2755,97.6258%
+all,ALL,sampled,359,112,31.1978%,80,22.2841%,105,29.2479%,112,31.1978%

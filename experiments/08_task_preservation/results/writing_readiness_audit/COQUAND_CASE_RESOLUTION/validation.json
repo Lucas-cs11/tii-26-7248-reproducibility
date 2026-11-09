@@ -1,0 +1,14 @@
+{
+  "evaluation_id": "fs_m3_j2_k2_w2_ur50_fl2_wf5_ar10_s6",
+  "frozen_hash": "7868dcfd319e2666",
+  "frozen_CI": "2.531250",
+  "current_original_runner_hash": "d076ab72c93739f7",
+  "current_original_runner_CI": "2.250000",
+  "current_original_runner_matches_frozen": false,
+  "current_pilot_runner_hash": "d076ab72c93739f7",
+  "runners_currently_agree": true,
+  "both_current_verified": true,
+  "original_frozen_intervals_available": false,
+  "classification": "FROZEN_RECORD_NOT_REPRODUCED_UNDER_CURRENT_ENVIRONMENT_UNRESOLVED",
+  "not_equivalent_optimal_proof": true
+}

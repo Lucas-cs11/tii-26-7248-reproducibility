@@ -1,0 +1,1 @@
+<FROZEN_ENV_PYTHON> <REPO>/experiments/08_task_preservation/code/run_case_audit.py cpgld fs_m4_j2_k2_w2_ur30_fl2_wf15_ar25_s1 '{"n_machines":4,"n_parts":2,"ops_per_part":2,"wip_bound":2,"unobservable_ratio":0.3,"fault_locations":2,"interval_width_factor":1.5,"adjustable_ratio":0.25,"seed":1}' 10 39.0 '<EXPECTED_RECORD_JSON>'
