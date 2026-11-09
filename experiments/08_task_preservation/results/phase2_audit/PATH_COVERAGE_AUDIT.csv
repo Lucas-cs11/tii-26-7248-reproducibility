@@ -1,0 +1,7 @@
+method,regime,n_successes,n_path_pass,n_psi0,n_psi10
+cpgld,full,1595,1528,1017,1528
+cpgld,sampled,259,105,73,105
+coquand,full,1011,1011,1011,1011
+coquand,sampled,62,6,6,6
+exhaustive,full,216,216,216,216
+exhaustive,sampled,38,1,1,1
